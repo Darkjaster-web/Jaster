@@ -6,19 +6,23 @@
 <title>JASTOKER AKUN - Beranda</title>
 
 <style>
+    /* ==== GLOBAL ==== */
     body {
         font-family: Arial, sans-serif;
         margin: 0;
-        background-color: #eef4ff;
+        background: #eef4ff; /* sama dengan daftar akun */
     }
 
-    /* ================= HEADER ================= */
+    /* ==== HEADER (disamakan dengan daftar akun) ==== */
     header {
         background: white;
-        padding: 20px 50px;
+        padding: 15px 20px; /* ukuran sama seperti daftar akun */
+        color: #000;
         display: flex;
         align-items: center;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        position: relative;
+        z-index: 5;
     }
 
     .logo-container {
@@ -27,14 +31,15 @@
     }
 
     .logo-container img {
-        width: 60px;
-        border-radius: 8px;
-        margin-right: 14px;
+        width: 50px;   /* sama dengan daftar akun */
+        border-radius: 5px;
+        margin-right: 10px;
     }
 
     .site-title {
-        font-size: 28px;
+        font-size: 20px;
         font-weight: bold;
+        letter-spacing: 1px;
         color: #111;
     }
 
@@ -44,55 +49,58 @@
 
     nav a {
         color: #111;
-        margin-left: 25px;
+        margin-left: 15px;
         text-decoration: none;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     nav a:hover {
-        color: #ff5722;
+        text-decoration: underline;
     }
 
-    /* ================= HERO SECTION BESAR ================= */
-    .hero {
-        padding: 110px 50px;
-        padding-bottom: 140px;
-        background: linear-gradient(to bottom, #d8e7ff, #eef4ff);
+    /* ==== MAIN SECTION (disamakan padding dengan halaman daftar akun) ==== */
+    main {
+        padding: 20px;
+    }
+
+    .h2-container {
         display: flex;
-        align-items: center;
         justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
     }
 
-    .hero h2 {
-        font-size: 70px;            /* FONT SUPER BESAR MIRIP HYER® */
-        font-weight: 900;
-        margin: 0;
-        color: #111;
-        line-height: 1;
-    }
-
-    .hero p {
-        font-size: 22px;
-        margin-top: 30px;
+    h2 {
+        font-size: 32px; /* menyesuaikan skala dengan daftar akun */
+        font-weight: bold;
         color: #333;
-        max-width: 500px;
-        font-weight: 300;
+        max-width: 50%;
+        line-height: 1.3;
     }
 
-    .hero img {
-        width: 480px;              /* GAMBAR DIPERBESAR */
-        border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    .h2-container img {
+        width: 280px; /* ukuran seimbang dengan card daftar akun */
+        margin-left: 14px;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
 
+    p {
+        font-size: 16px;
+        max-width: 600px;
+        color: #333;
+        margin-top: 20px;
+    }
+
+    /* ==== FOOTER ==== */
     footer {
         text-align: center;
         padding: 20px;
         background: #ddd;
         font-size: 14px;
         color: #333;
-        margin-top: 50px;
+        margin-top: 40px;
     }
 </style>
 </head>
@@ -104,7 +112,6 @@
         <img src="Gambar/Logo.jpg" alt="Logo JASTOKER AKUN">
         <div class="site-title">JASTOKER AKUN</div>
     </div>
-
     <nav>
         <a href="index.html">Beranda</a>
         <a href="daftar-akun.html">Daftar Akun</a>
@@ -112,19 +119,16 @@
     </nav>
 </header>
 
+<main>
 
-
-<!-- ================= HERO SECTION SUDAH DIBESARKAN ================= -->
-<section class="hero">
-    <div class="hero-text">
-        <h2>Selamat Datang<br>di JASTOKER AKUN</h2>
-        <p>Kami menyediakan berbagai akun game dengan harga terbaik. Pilih akun favoritmu dan beli langsung melalui WhatsApp!</p>
+    <div class="h2-container">
+        <h2>Selamat Datang di<br>JASTOKER AKUN</h2>
+        <img src="Gambar/FF_2.png" alt="Gambar Kanan">
     </div>
 
-    <img src="Gambar/FF_2.png" alt="Gambar Kanan">
-</section>
+    <p>Kami menyediakan berbagai akun game dengan harga terbaik. Pilih akun favoritmu dan beli langsung melalui WhatsApp!</p>
 
-
+</main>
 
 <footer id="kontak">
     &copy; 2025 Toko Akun FF | Kontak via WhatsApp
