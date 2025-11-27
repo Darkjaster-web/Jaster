@@ -6,24 +6,19 @@
 <title>JASTOKER AKUN - Beranda</title>
 
 <style>
-    /* ==== GLOBAL ==== */
     body {
         font-family: Arial, sans-serif;
         margin: 0;
-        background: linear-gradient(to bottom, #dce7f5, #ffffff);
+        background-color: #eef4ff;
     }
 
-    /* ==== HEADER ==== */
+    /* ================= HEADER ================= */
     header {
-        background: transparent;
-        padding: 25px 40px;
-        color: #000;
+        background: white;
+        padding: 20px 50px;
         display: flex;
         align-items: center;
-        position: absolute;
-        width: 100%;
-        top: 0;
-        z-index: 10;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     .logo-container {
@@ -32,15 +27,15 @@
     }
 
     .logo-container img {
-        width: 55px;
+        width: 60px;
         border-radius: 8px;
-        margin-right: 12px;
+        margin-right: 14px;
     }
 
     .site-title {
-        font-size: 26px;
+        font-size: 28px;
         font-weight: bold;
-        letter-spacing: 1px;
+        color: #111;
     }
 
     nav {
@@ -48,60 +43,56 @@
     }
 
     nav a {
-        color: #000;
+        color: #111;
         margin-left: 25px;
         text-decoration: none;
         font-weight: bold;
-        font-size: 16px;
-        opacity: 0.7;
-        transition: 0.3s;
+        font-size: 18px;
     }
 
     nav a:hover {
-        opacity: 1;
+        color: #ff5722;
     }
 
-    /* ==== MAIN SECTION ==== */
-    main {
-        padding: 120px 40px;
-    }
-
-    .h2-container {
+    /* ================= HERO SECTION BESAR ================= */
+    .hero {
+        padding: 110px 50px;
+        padding-bottom: 140px;
+        background: linear-gradient(to bottom, #d8e7ff, #eef4ff);
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
     }
 
-    h2 {
-        font-size: 48px;
-        font-weight: 800;
-        color: #0d1b2a;
-        max-width: 50%;
-        line-height: 1.2;
+    .hero h2 {
+        font-size: 70px;            /* FONT SUPER BESAR MIRIP HYER® */
+        font-weight: 900;
+        margin: 0;
+        color: #111;
+        line-height: 1;
     }
 
-    .h2-container img {
-        width: 380px;
-        margin-left: 20px;
-        border-radius: 12px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-
-    p {
-        font-size: 18px;
-        max-width: 600px;
+    .hero p {
+        font-size: 22px;
+        margin-top: 30px;
         color: #333;
-        margin-top: 20px;
+        max-width: 500px;
+        font-weight: 300;
     }
 
-    /* ==== FOOTER ==== */
+    .hero img {
+        width: 480px;              /* GAMBAR DIPERBESAR */
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
     footer {
         text-align: center;
-        padding: 25px;
-        background: #f5f5f5;
-        font-size: 15px;
-        color: #555;
-        margin-top: 60px;
+        padding: 20px;
+        background: #ddd;
+        font-size: 14px;
+        color: #333;
+        margin-top: 50px;
     }
 </style>
 </head>
@@ -113,6 +104,7 @@
         <img src="Gambar/Logo.jpg" alt="Logo JASTOKER AKUN">
         <div class="site-title">JASTOKER AKUN</div>
     </div>
+
     <nav>
         <a href="index.html">Beranda</a>
         <a href="daftar-akun.html">Daftar Akun</a>
@@ -120,16 +112,19 @@
     </nav>
 </header>
 
-<main>
 
-    <div class="h2-container">
-        <h2>Selamat Datang di<br>JASTOKER AKUN</h2>
-        <img src="Gambar/FF_2.png" alt="Gambar Kanan">
+
+<!-- ================= HERO SECTION SUDAH DIBESARKAN ================= -->
+<section class="hero">
+    <div class="hero-text">
+        <h2>Selamat Datang<br>di JASTOKER AKUN</h2>
+        <p>Kami menyediakan berbagai akun game dengan harga terbaik. Pilih akun favoritmu dan beli langsung melalui WhatsApp!</p>
     </div>
 
-    <p>Kami menyediakan berbagai akun game dengan harga terbaik. Pilih akun favoritmu dan beli langsung melalui WhatsApp!</p>
+    <img src="Gambar/FF_2.png" alt="Gambar Kanan">
+</section>
 
-</main>
+
 
 <footer id="kontak">
     &copy; 2025 Toko Akun FF | Kontak via WhatsApp
