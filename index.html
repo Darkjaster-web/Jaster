@@ -12,15 +12,14 @@
         background: linear-gradient(to bottom, #dce7f5, #ffffff);
     }
 
-    /* ==== HEADER ==== */
+    /* ==== HEADER (SAMA DENGAN DAFTAR AKUN) ==== */
     header {
-        background: transparent;
-        padding: 20px 40px;
-        color: #000;
+        background: white;
+        padding: 15px 40px;
         display: flex;
         align-items: center;
-        position: absolute;
-        width: 100%;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        position: sticky;
         top: 0;
         z-index: 10;
     }
@@ -31,106 +30,128 @@
     }
 
     .logo-container img {
-        width: 60px;
-        border-radius: 10px;
+        width: 55px;
+        border-radius: 6px;
         margin-right: 12px;
     }
 
     .site-title {
-        font-size: 28px;
+        font-size: 24px;
         font-weight: bold;
         letter-spacing: 1px;
+        color: #111;
     }
 
     nav {
         margin-left: auto;
-        display: flex;
-        gap: 30px;
     }
 
     nav a {
-        color: #000;
+        color: #111;
+        margin-left: 20px;
         text-decoration: none;
         font-weight: bold;
-        font-size: 17px;
-        opacity: 0.7;
-        transition: 0.3s;
+        font-size: 16px;
     }
 
     nav a:hover {
-        opacity: 1;
+        color: #ff5722;
     }
 
-    /* ==== MAIN SECTION (mirip Hyer, tapi ukuran disesuaikan) ==== */
+    /* ==== MAIN — LEBAR DISAMAKAN DENGAN DAFTAR AKUN ==== */
     main {
-        padding: 160px 40px 80px;
+        padding: 40px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
+        gap: 40px;
     }
 
+    /* JUDUL */
     h1 {
-        font-size: 85px; /* besar tapi tidak ekstrem */
+        font-size: 60px; /* diperkecil agar serasi */
         font-weight: 900;
         margin: 0;
-        line-height: 1;
+        line-height: 1.1;
         color: #0d1b2a;
+        max-width: 450px; /* supaya pas seperti daftar-akun */
     }
 
     .subtext {
-        margin-top: 20px;
-        font-size: 38px;
+        margin-top: 10px;
+        font-size: 30px;
         color: #0d1b2a;
         font-weight: bold;
     }
 
-    .plane-img {
-        width: 450px; /* lebih besar dari sebelumnya */
-        max-width: 100%;
-        margin-top: 20px;
-        border-radius: 16px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    }
-
+    /* TEXT */
     p {
-        font-size: 19px;
+        font-size: 18px;
         color: #333;
-        margin-top: 25px;
-        max-width: 500px;
+        margin-top: 18px;
+        max-width: 480px;
     }
 
-    /* ==== BUTTON STYLE ==== */
+    /* BUTTON */
     .btn-group {
-        margin-top: 35px;
+        margin-top: 28px;
         display: flex;
-        gap: 20px;
+        gap: 18px;
     }
 
     .btn {
-        padding: 14px 32px;
-        border-radius: 40px;
+        padding: 12px 30px;
+        border-radius: 8px;
         border: none;
-        background: #000;
+        background: #111;
         color: white;
-        font-size: 16px;
+        font-size: 15px;
         cursor: pointer;
         font-weight: bold;
         transition: 0.3s;
     }
 
     .btn:hover {
-        transform: translateY(-3px);
-        background: #222;
+        background: #333;
     }
 
-    /* ==== FOOTER ==== */
+    /* GAMBAR (DISESUAIKAN AGAR PROPORSIONAL) */
+    .plane-img {
+        width: 360px; /* SEIMBANG dengan kartu di daftar akun */
+        max-width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    /* FOOTER */
     footer {
         text-align: center;
-        padding: 30px;
-        background: #f5f5f5;
-        font-size: 15px;
-        color: #555;
+        padding: 20px;
+        background: #ddd;
+        font-size: 14px;
+        color: #333;
+        margin-top: 40px;
+    }
+
+    @media (max-width: 700px) {
+        main {
+            text-align: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 48px;
+            max-width: 100%;
+        }
+
+        .plane-img {
+            width: 80%;
+        }
+
+        .btn-group {
+            justify-content: center;
+        }
     }
 </style>
 </head>
@@ -154,7 +175,10 @@
         <h1>JASTOKER</h1>
         <div class="subtext">Akun Premium</div>
 
-        <p>Kami menyediakan berbagai akun game dengan harga terbaik. Pilih akun favoritmu dan beli langsung melalui WhatsApp!</p>
+        <p>
+            Kami menyediakan berbagai akun game dengan harga terbaik.
+            Pilih akun favoritmu dan beli langsung melalui WhatsApp!
+        </p>
 
         <div class="btn-group">
             <button class="btn" onclick="window.location.href='daftar-akun.html'">Lihat Akun</button>
