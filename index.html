@@ -21,18 +21,13 @@
         display: flex;
         align-items: center;
     }
+    /* HANYA perubahan yang kamu minta */
     .logo-container img {
-        width: 50px;
+        width: 120px; /* ukuran diperbesar */
         border-radius: 5px;
-        margin-right: 10px;
+        margin-left: 10px; /* beri jarak dari teks */
     }
-    .site-title { font-size: 20px; font-weight: bold; }
-    nav { margin-left: auto; }
-    nav a { color: white; margin-left: 15px; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    main { padding: 20px; }
-
-    /* Tambahkan font untuk H2 */
+    /* H2 memakai font yang kamu minta */
     h2 { 
         margin-bottom: 20px; 
         color: #333; 
@@ -40,19 +35,11 @@
         font-weight: 900;
     }
 
-    /* === Tambahan sesuai permintaan: gambar di samping h2 === */
-    .judul-dengan-gambar {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .icon-h2 {
-        width: 50px;
-        height: 50px;
-        object-fit: contain;
-    }
-
+    .site-title { font-size: 20px; font-weight: bold; }
+    nav { margin-left: auto; }
+    nav a { color: white; margin-left: 15px; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    main { padding: 20px; }
     footer { text-align: center; padding: 20px; background: #ddd; font-size: 14px; color: #333; }
 </style>
 </head>
@@ -60,8 +47,9 @@
 
 <header>
     <div class="logo-container">
-        <img src="Gambar/Logo.jpg" alt="Logo JASTOKER AKUN">
+        <!-- Posisi dibalik: teks dulu, gambar di kanan -->
         <div class="site-title">JASTOKER AKUN</div>
+        <img src="Gambar/FF_2.png" alt="Logo JASTOKER AKUN">
     </div>
     <nav>
         <a href="index.html">Beranda</a>
@@ -71,13 +59,7 @@
 </header>
 
 <main>
-
-    <!-- Gambar di samping H2 (penambahan sesuai permintaan) -->
-    <div class="judul-dengan-gambar">
-        <img src="Gambar/FF_2.png" alt="Icon Welcome" class="icon-h2">
-        <h2>Selamat Datang di JASTOKER AKUN</h2>
-    </div>
-
+    <h2>Selamat Datang di JASTOKER AKUN</h2>
     <p>Kami menyediakan berbagai akun game dengan harga terbaik. Pilih akun favoritmu dan beli langsung melalui WhatsApp!</p>
 </main>
 
