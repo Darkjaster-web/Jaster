@@ -5,78 +5,180 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JASTOKER AKUN - Beranda</title>
 
-<!-- Tambahkan Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@900&family=PT+Serif&display=swap" rel="stylesheet">
-
 <style>
-    /* === Tetap sesuai coding asli === */
-    body { font-family: Arial, sans-serif; margin: 0; background-color: #f0f0f0; }
+    /* --- FOOTER SELALU DI BAWAH --- */
+    html, body {
+        height: 100%;
+        margin: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom, #dce7f5, #ffffff);
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        flex: 1; /* mendorong footer ke bawah */
+        padding: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    /* ==== HEADER ==== */
     header {
-        background-color: #ff5722;
-        padding: 10px 20px;
-        color: white;
+        background: white;
+        padding: 15px 40px;
         display: flex;
         align-items: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 10;
     }
+
     .logo-container {
         display: flex;
         align-items: center;
     }
+
     .logo-container img {
-        width: 50px;
-        border-radius: 5px;
-        margin-right: 10px;
+        width: 55px;
+        border-radius: 6px;
+        margin-right: 12px;
     }
-    .site-title { font-size: 20px; font-weight: bold; }
-    nav { margin-left: auto; }
-    nav a { color: white; margin-left: 15px; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
 
-    /* === Footer sticky dan main flex === */
-    html, body {
-        height: 100%;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        transition: transform 0.5s ease; /* untuk animasi slide */
+    .site-title {
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: #111;
     }
-    main { flex: 1; padding: 20px; }
 
-    /* Tambahkan font untuk H2 */
-    h2 { 
-        margin-bottom: 20px; 
-        color: #333; 
-        font-family: 'Fira Sans', 'PT Serif', sans-serif; 
+    nav {
+        margin-left: auto;
+    }
+
+    nav a {
+        color: #111;
+        margin-left: 20px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    nav a:hover {
+        color: #ff5722;
+    }
+
+    /* ==== JUDUL & TEXT ==== */
+    h1 {
+        font-size: 60px;
         font-weight: 900;
+        margin: 0;
+        line-height: 1.1;
+        color: #0d1b2a;
+        max-width: 450px;
     }
 
-    /* === Tambahan sesuai permintaan: gambar di samping h2 === */
-    .judul-dengan-gambar {
+    .subtext {
+        margin-top: 10px;
+        font-size: 30px;
+        color: #0d1b2a;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 18px;
+        color: #333;
+        margin-top: 18px;
+        max-width: 480px;
+    }
+
+    /* ==== BUTTON ==== */
+    .btn-group {
+        margin-top: 28px;
         display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-    .icon-h2 {
-        width: 50px;
-        height: 50px;
-        object-fit: contain;
+        gap: 18px;
     }
 
-    /* Footer tetap di bawah */
+    .btn {
+        padding: 12px 30px;
+        border-radius: 8px;
+        border: none;
+        background: #111;
+        color: white;
+        font-size: 15px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #333;
+    }
+
+    /* ==== GAMBAR ==== */
+    .plane-img {
+        width: 360px;
+        max-width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    /* ==== ANIMASI SLIDE FROM RIGHT ==== */
+    .page-slide {
+        animation: slideIn 0.6s ease forwards;
+        opacity: 0;
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateX(100px);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    /* ==== FOOTER ==== */
     footer {
         text-align: center;
         padding: 20px;
         background: #ddd;
         font-size: 14px;
         color: #333;
+        margin-top: 40px;
     }
 
-    /* Animasi slide keluar ke kanan */
-    body.slide-out-right {
-        transform: translateX(100%);
+    @media (max-width: 700px) {
+        main {
+            text-align: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 48px;
+            max-width: 100%;
+        }
+
+        .plane-img {
+            width: 80%;
+        }
+
+        .btn-group {
+            justify-content: center;
+        }
     }
 </style>
 </head>
+
 <body>
 
 <header>
@@ -91,37 +193,33 @@
     </nav>
 </header>
 
-<main>
-    <!-- Gambar di samping H2 (penambahan sesuai permintaan) -->
-    <div class="judul-dengan-gambar">
-        <img src="Gambar/Icon-Welcome.png" alt="Icon Welcome" class="icon-h2">
-        <h2>Selamat Datang di JASTOKER AKUN</h2>
+<!-- ANIMASI DITEMPATKAN DI MAIN -->
+<main class="page-slide">
+
+    <div class="left">
+        <h1>JASTOKER</h1>
+        <div class="subtext">Akun Premium</div>
+
+        <p>
+            Kami menyediakan berbagai akun game dengan harga terbaik.
+            Pilih akun favoritmu dan beli langsung melalui WhatsApp!
+        </p>
+
+        <div class="btn-group">
+            <button class="btn" onclick="window.location.href='daftar-akun.html'">Lihat Akun</button>
+            <button class="btn">Hubungi Kami</button>
+        </div>
     </div>
 
-    <p>Kami menyediakan berbagai akun game dengan harga terbaik. Pilih akun favoritmu dan beli langsung melalui WhatsApp!</p>
+    <div class="right">
+        <img src="Gambar/FF_2.png" class="plane-img" alt="Gambar Kanan">
+    </div>
+
 </main>
 
 <footer id="kontak">
-    &copy; 2025 Toko Akun FF | Kontak via WhatsApp
+    &copy; 2025 JASTOKER AKUN | Kontak via WhatsApp
 </footer>
-
-<!-- === Script animasi slide halaman === -->
-<script>
-    const links = document.querySelectorAll('nav a');
-
-    links.forEach(link => {
-        link.addEventListener('click', function(e){
-            const href = link.getAttribute('href');
-            if(href !== '#' && href !== '' && !href.startsWith('http')) {
-                e.preventDefault();
-                document.body.classList.add('slide-out-right');
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 500); // durasi sama dengan CSS transition
-            }
-        });
-    });
-</script>
 
 </body>
 </html>
