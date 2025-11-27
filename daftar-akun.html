@@ -6,13 +6,25 @@
 <title>JASTOKER AKUN - Daftar Akun</title>
 
 <style>
-    body {
-        font-family: Arial, sans-serif;
+    /* ==== FOOTER STICKY ==== */
+    html, body {
+        height: 100%;
         margin: 0;
-        background-color: #eef4ff;
     }
 
-    /* ===== HEADER BARU (MODERN) ===== */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #eef4ff;
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        flex: 1; /* mendorong footer ke bawah */
+        padding: 40px;
+    }
+
+    /* ===== HEADER ===== */
     header {
         background: white;
         padding: 15px 40px;
@@ -59,10 +71,6 @@
     }
 
     /* ===== TITLE ===== */
-    main {
-        padding: 40px;
-    }
-
     h2 {
         text-align: center;
         margin-bottom: 30px;
@@ -71,7 +79,7 @@
         font-weight: 900;
     }
 
-    /* ===== CARD STYLE BARU ===== */
+    /* ===== CARD ===== */
     .container {
         display: flex;
         flex-wrap: wrap;
@@ -139,13 +147,31 @@
         background-color: #128C7E;
     }
 
+    /* ==== ANIMASI SLIDE FROM LEFT ==== */
+    .page-slide {
+        animation: slideLeft 0.6s ease forwards;
+        opacity: 0;
+    }
+
+    @keyframes slideLeft {
+        from {
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    /* ==== FOOTER ==== */
     footer {
         text-align: center;
         padding: 20px;
         background: #ddd;
         font-size: 14px;
         color: #333;
-        margin-top: 50px;
+        margin-top: 40px;
     }
 
     @media screen and (max-width: 600px) {
@@ -170,7 +196,8 @@
     </nav>
 </header>
 
-<main>
+<!-- Tambahkan class animasi -->
+<main class="page-slide">
 
     <h2>Daftar Akun</h2>
 
