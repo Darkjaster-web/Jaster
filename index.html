@@ -31,13 +31,28 @@
     nav a { color: white; margin-left: 15px; text-decoration: none; font-weight: bold; }
     nav a:hover { text-decoration: underline; }
     main { padding: 20px; }
+
     /* Tambahkan font untuk H2 */
     h2 { 
         margin-bottom: 20px; 
         color: #333; 
         font-family: 'Fira Sans', 'PT Serif', sans-serif; 
-        font-weight: 900; /* Fira Sans Black */
+        font-weight: 900;
     }
+
+    /* === Tambahan sesuai permintaan: gambar di samping h2 === */
+    .judul-dengan-gambar {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .icon-h2 {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+    }
+
     footer { text-align: center; padding: 20px; background: #ddd; font-size: 14px; color: #333; }
 </style>
 </head>
@@ -45,7 +60,7 @@
 
 <header>
     <div class="logo-container">
-         <img src="Gambar/Logo.jpg" alt="Logo JASTOKER AKUN">
+        <img src="Gambar/Logo.jpg" alt="Logo JASTOKER AKUN">
         <div class="site-title">JASTOKER AKUN</div>
     </div>
     <nav>
@@ -56,7 +71,13 @@
 </header>
 
 <main>
-    <h2>Selamat Datang di JASTOKER AKUN</h2>
+
+    <!-- Gambar di samping H2 (penambahan sesuai permintaan) -->
+    <div class="judul-dengan-gambar">
+        <img src="Gambar/FF_2.png" alt="Icon Welcome" class="icon-h2">
+        <h2>Selamat Datang di JASTOKER AKUN</h2>
+    </div>
+
     <p>Kami menyediakan berbagai akun game dengan harga terbaik. Pilih akun favoritmu dan beli langsung melalui WhatsApp!</p>
 </main>
 
