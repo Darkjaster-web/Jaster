@@ -10,6 +10,14 @@
         margin: 0;
         font-family: Arial, sans-serif;
         background: #eef4ff;
+        opacity: 0;
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    /* 🔥 ANIMASI FADE IN HALAMAN */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
     }
 
     header {
@@ -59,18 +67,21 @@
     .container {
         text-align: center;
         padding: 50px 20px;
+        transform: translateX(-80px);
+        opacity: 0;
+        animation: slideRight 0.9s ease-out forwards;
     }
 
-    h1 {
-        font-size: 48px;
-        margin-bottom: 10px;
-        color: #0d1b2a;
-    }
-
-    p {
-        font-size: 18px;
-        color: #333;
-        margin-bottom: 30px;
+    /* 🔥 ANIMASI GESER KE KANAN */
+    @keyframes slideRight {
+        from {
+            transform: translateX(-80px);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
     }
 
     .contact-box {
@@ -80,6 +91,23 @@
         padding: 30px;
         border-radius: 12px;
         box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        
+        /* 🔥 ANIMASI TAMBAHAN (FADE + SCALE) */
+        transform: scale(0.9);
+        opacity: 0;
+        animation: popIn 0.8s ease-out 0.4s forwards;
+    }
+
+    /* 🔥 ANIMASI POP-IN */
+    @keyframes popIn {
+        0% {
+            transform: scale(0.9);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
     }
 
     .contact-item {
@@ -95,6 +123,7 @@
 
     .contact-item:hover {
         background: #e8e8e8;
+        transform: translateX(6px);
     }
 
     .contact-item img {
@@ -108,6 +137,8 @@
         padding: 20px;
         background: #ddd;
         color: #333;
+        opacity: 0;
+        animation: fadeIn 0.8s ease-out 0.6s forwards;
     }
 
 </style>
@@ -157,5 +188,3 @@
 
 </body>
 </html>
-
-
