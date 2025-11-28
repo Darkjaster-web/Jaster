@@ -6,7 +6,6 @@
 <title>JASTOKER AKUN - Daftar Akun</title>
 
 <style>
-    /* ==== FOOTER STICKY ==== */
     html, body {
         height: 100%;
         margin: 0;
@@ -20,11 +19,10 @@
     }
 
     main {
-        flex: 1; /* mendorong footer ke bawah */
+        flex: 1;
         padding: 40px;
     }
 
-    /* ===== HEADER ===== */
     header {
         background: white;
         padding: 15px 40px;
@@ -50,7 +48,6 @@
     .site-title {
         font-size: 24px;
         font-weight: bold;
-        letter-spacing: 1px;
         color: #111;
     }
 
@@ -70,7 +67,6 @@
         color: #ff5722;
     }
 
-    /* ===== TITLE ===== */
     h2 {
         text-align: center;
         margin-bottom: 30px;
@@ -79,7 +75,6 @@
         font-weight: 900;
     }
 
-    /* ===== CARD ===== */
     .container {
         display: flex;
         flex-wrap: wrap;
@@ -147,24 +142,16 @@
         background-color: #128C7E;
     }
 
-    /* ==== ANIMASI SLIDE FROM LEFT ==== */
     .page-slide {
         animation: slideLeft 0.6s ease forwards;
         opacity: 0;
     }
 
     @keyframes slideLeft {
-        from {
-            transform: translateX(-100px);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
+        from { transform: translateX(-100px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
     }
 
-    /* ==== FOOTER ==== */
     footer {
         text-align: center;
         padding: 20px;
@@ -172,12 +159,6 @@
         font-size: 14px;
         color: #333;
         margin-top: 40px;
-    }
-
-    @media screen and (max-width: 600px) {
-        .card {
-            width: 94%;
-        }
     }
 </style>
 </head>
@@ -192,11 +173,10 @@
     <nav>
         <a href="index.html">Beranda</a>
         <a href="daftar-akun.html">Daftar Akun</a>
-        <a href="#kontak">Kontak</a>
+        <a href="kontak.html">Kontak</a>
     </nav>
 </header>
 
-<!-- Tambahkan class animasi -->
 <main class="page-slide">
 
     <h2>Daftar Akun</h2>
