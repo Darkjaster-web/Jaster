@@ -6,20 +6,24 @@
 <title>JASTOKER AKUN - Kontak</title>
 
 <style>
+    /* ==== FOOTER SELALU DI BAWAH ==== */
+    html, body {
+        height: 100%;
+    }
+
     body {
         margin: 0;
         font-family: Arial, sans-serif;
         background: #eef4ff;
-        opacity: 0;
-        animation: fadeIn 0.8s ease-out forwards;
+        display: flex;
+        flex-direction: column;
     }
 
-    /* 🔥 ANIMASI FADE IN HALAMAN */
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+    footer {
+        margin-top: auto;
     }
 
+    /* ==== HEADER ==== */
     header {
         background: white;
         padding: 15px 40px;
@@ -64,24 +68,41 @@
         color: #ff5722;
     }
 
+    /* ==== CONTAINER ==== */
     .container {
         text-align: center;
         padding: 50px 20px;
-        transform: translateX(-80px);
+        animation: slideRight 0.7s ease forwards, fadeIn 1.3s ease;
         opacity: 0;
-        animation: slideRight 0.9s ease-out forwards;
     }
 
-    /* 🔥 ANIMASI GESER KE KANAN */
+    /* ==== ANIMASI ==== */
     @keyframes slideRight {
         from {
-            transform: translateX(-80px);
+            transform: translateX(80px);
             opacity: 0;
         }
         to {
             transform: translateX(0);
             opacity: 1;
         }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    h1 {
+        font-size: 48px;
+        margin-bottom: 10px;
+        color: #0d1b2a;
+    }
+
+    p {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 30px;
     }
 
     .contact-box {
@@ -91,23 +112,7 @@
         padding: 30px;
         border-radius: 12px;
         box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        
-        /* 🔥 ANIMASI TAMBAHAN (FADE + SCALE) */
-        transform: scale(0.9);
-        opacity: 0;
-        animation: popIn 0.8s ease-out 0.4s forwards;
-    }
-
-    /* 🔥 ANIMASI POP-IN */
-    @keyframes popIn {
-        0% {
-            transform: scale(0.9);
-            opacity: 0;
-        }
-        100% {
-            transform: scale(1);
-            opacity: 1;
-        }
+        animation: fadeIn 1.2s ease;
     }
 
     .contact-item {
@@ -123,7 +128,7 @@
 
     .contact-item:hover {
         background: #e8e8e8;
-        transform: translateX(6px);
+        transform: scale(1.03);
     }
 
     .contact-item img {
@@ -132,13 +137,10 @@
     }
 
     footer {
-        margin-top: 40px;
         text-align: center;
         padding: 20px;
         background: #ddd;
         color: #333;
-        opacity: 0;
-        animation: fadeIn 0.8s ease-out 0.6s forwards;
     }
 
 </style>
