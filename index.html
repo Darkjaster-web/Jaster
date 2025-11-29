@@ -1,159 +1,123 @@
-<!-- Redesign JASTOKER AKUN — Style mengikuti layout seperti itemku (tanpa mengubah struktur konten utama) -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JASTOKER AKUN - Beranda</title>
+
 <style>
     body {
         margin: 0;
-        font-family: "Poppins", Arial, sans-serif;
-        background: #e8f0ff;
+        font-family: Arial, sans-serif;
+        background: #0f3fa8;
     }
 
-    /* ===== HEADER BAR ala itemku ===== */
+    /* HEADER */
     header {
-        background: #0a3c8a;
-        padding: 10px 40px;
+        background: #0f3fa8;
+        padding: 15px 40px;
         display: flex;
         align-items: center;
         color: white;
         position: sticky;
         top: 0;
-        z-index: 100;
-    }
-
-    .logo-container {
-        display: flex;
-        align-items: center;
-        gap: 12px;
+        z-index: 10;
     }
 
     .logo-container img {
         width: 55px;
         border-radius: 6px;
+        margin-right: 12px;
     }
 
-    .site-title {
-        font-size: 24px;
-        font-weight: bold;
-    }
-
-    nav {
-        margin-left: auto;
-        display: flex;
-        gap: 25px;
-    }
-
+    nav { margin-left: auto; }
     nav a {
         text-decoration: none;
-        font-weight: 600;
-        color: #fff;
-    }
-
-    nav a:hover {
-        opacity: 0.7;
-    }
-
-    /* ===== HERO SECTION ala itemku slider ===== */
-    .hero {
-        background: linear-gradient(to right, #dce8ff, #bcd1ff);
-        padding: 60px 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 40px;
-    }
-
-    .hero h1 {
-        font-size: 60px;
-        font-weight: 900;
-        color: #0e1c3a;
-        margin: 0;
-    }
-
-    .subtext {
-        font-size: 30px;
         font-weight: bold;
-        margin-top: 10px;
-    }
-
-    p {
-        max-width: 450px;
-        font-size: 18px;
-        line-height: 1.5;
-        margin-top: 15px;
-        color: #333;
-    }
-
-    .btn-group {
-        margin-top: 25px;
-        display: flex;
-        gap: 15px;
-    }
-
-    .btn {
-        padding: 12px 26px;
-        border: none;
-        border-radius: 6px;
-        font-weight: bold;
-        cursor: pointer;
-        background: #0a3c8a;
+        font-size: 16px;
         color: white;
-        transition: 0.3s;
+        margin-left: 20px;
     }
 
-    .btn:hover {
-        background: #062b63;
-    }
-
-    .plane-img {
-        width: 360px;
-        border-radius: 14px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    }
-
-    /* ===== FOOTER ala itemku ===== */
-    footer {
-        background: #ffffff;
-        padding: 60px 40px;
-        box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
-    }
-
-    footer .footer-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 50px;
-    }
-
-    footer h3 {
-        margin-bottom: 8px;
-        color: #0a3c8a;
-        font-size: 18px;
-    }
-
-    footer p, footer a {
-        margin: 4px 0;
-        color: #333;
-        text-decoration: none;
+    /* NAV KATEGORI */
+    .kategori-bar {
+        background: #104ac2;
+        padding: 12px 40px;
+        color: white;
         font-size: 15px;
+        display: flex;
+        gap: 25px;
+        font-weight: bold;
     }
 
-    footer .social span {
-        font-size: 30px;
-        cursor: pointer;
-        margin-right: 10px;
+    /* HERO SLIDER */
+    .slider-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 25px auto;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.25);
     }
 
-    footer .bottom {
+    .slider {
+        display: flex;
+        width: 400%;
+        transition: transform 0.8s ease-in-out;
+    }
+
+    .slide img {
+        width: 100%;
+        display: block;
+    }
+
+    /* EMPAT BANNER DI BAWAH SLIDER */
+    .banner-row {
+        display: flex;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 25px auto;
+        padding: 0 40px;
+    }
+
+    .banner-box {
+        flex: 1;
+        background: white;
+        border-radius: 15px;
+        height: 220px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        overflow: hidden;
+    }
+
+    .banner-box img {
+        width: 100%; height: 100%; object-fit: cover;
+    }
+
+    /* ICON KATEGORI BESAR */
+    .icon-wrap {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
         margin-top: 40px;
-        padding-top: 25px;
-        border-top: 1px solid #ccc;
+    }
+
+    .icon-box {
         text-align: center;
-        color: #444;
+        color: white;
+        font-weight: bold;
+    }
+
+    .icon-box img {
+        width: 70px;
+        margin-bottom: 10px;
+    }
+
+    /* FOOTER */
+    footer {
+        background: #f5f5f5;
+        padding: 40px;
+        text-align: center;
+        margin-top: 60px;
     }
 </style>
 </head>
@@ -161,7 +125,7 @@
 
 <header>
     <div class="logo-container">
-        <img src="Gambar/Logo.jpg" alt="Logo JASTOKER AKUN">
+        <img src="Gambar/Logo.jpg" alt="Logo">
         <div class="site-title">JASTOKER AKUN</div>
     </div>
 
@@ -172,55 +136,56 @@
     </nav>
 </header>
 
-<section class="hero">
-    <div class="left">
-        <h1>JASTOKER</h1>
-        <div class="subtext">Akun Premium</div>
-        <p>Kami menyediakan berbagai akun game dengan harga terbaik.
-        Pilih akun favoritmu dan beli langsung melalui WhatsApp!</p>
-        <div class="btn-group">
-            <button class="btn" onclick="window.location.href='daftar-akun.html'">Lihat Akun</button>
-            <button class="btn" onclick="window.location.href='kontak.html'">Hubungi Kami</button>
-        </div>
-    </div>
+<!-- KATEGORI BAR -->
+<div class="kategori-bar">
+    Kategori
+    <span>Top Up</span>
+    <span>Akun</span>
+    <span>Voucher</span>
+    <span>Koin Game</span>
+    <span>Streaming</span>
+</div>
 
-    <div class="right">
-        <img src="Gambar/FF_2.png" class="plane-img" alt="Gambar Kanan">
+<!-- HERO SLIDER AUTO PLAY -->
+<div class="slider-container">
+    <div class="slider" id="slider">
+        <div class="slide"><img src="Gambar/slide1.png"></div>
+        <div class="slide"><img src="Gambar/slide2.png"></div>
+        <div class="slide"><img src="Gambar/slide3.png"></div>
+        <div class="slide"><img src="Gambar/slide4.png"></div>
     </div>
-</section>
+</div>
 
+<script>
+let index = 0;
+function runSlider() {
+    const slider = document.getElementById('slider');
+    const slides = document.querySelectorAll('.slide');
+    index = (index + 1) % slides.length;
+    slider.style.transform = `translateX(-${index * 100}%)`;
+}
+setInterval(runSlider, 3500);
+</script>
+
+<!-- EMPAT BANNER SEPERTI ITEMKU -->
+<div class="banner-row">
+    <div class="banner-box"><img src="Gambar/banner1.png"></div>
+    <div class="banner-box"><img src="Gambar/banner2.png"></div>
+    <div class="banner-box"><img src="Gambar/banner3.png"></div>
+    <div class="banner-box"><img src="Gambar/banner4.png"></div>
+</div>
+
+<!-- ICON KATEGORI -->
+<div class="icon-wrap">
+    <div class="icon-box"><img src="Gambar/ico1.png"><div>Top Up</div></div>
+    <div class="icon-box"><img src="Gambar/ico2.png"><div>Akun Game</div></div>
+    <div class="icon-box"><img src="Gambar/ico3.png"><div>Voucher</div></div>
+    <div class="icon-box"><img src="Gambar/ico4.png"><div>Streaming</div></div>
+</div>
+
+<!-- FOOTER -->
 <footer>
-    <div class="footer-content">
-        <div>
-            <h3>Bantuan</h3>
-            <p><a href="#">Pusat Bantuan</a></p>
-        </div>
-        <div>
-            <h3>JASTOKER</h3>
-            <p><a href="#">Tentang JASTOKER</a></p>
-            <p><a href="#">Blog</a></p>
-            <p><a href="#">Brand</a></p>
-            <p><a href="#">Hubungi Kami</a></p>
-        </div>
-        <div>
-            <h3>Pembeli</h3>
-            <p><a href="#">Cara Belanja</a></p>
-            <p><a href="#">Cara Pembayaran</a></p>
-            <h3 style="margin-top:20px;">Penjual</h3>
-            <p><a href="#">Cara Menjadi Penjual</a></p>
-        </div>
-        <div>
-            <h3>Metode Pembayaran</h3>
-            <img src="Gambar/payment.png" style="width:250px; margin-top:10px;">
-        </div>
-        <div>
-            <h3>Ikuti Kami</h3>
-            <div class="social">
-                <span>📘</span><span>📸</span><span>▶️</span><span>🎵</span><span>🐦</span>
-            </div>
-        </div>
-    </div>
-    <div class="bottom">© 2025 JASTOKER AKUN — Semua Hak Dilindungi</div>
+    © 2025 JASTOKER AKUN — Semua Hak Dilindungi
 </footer>
 
 </body>
