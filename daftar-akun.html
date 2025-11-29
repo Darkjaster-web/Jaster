@@ -67,6 +67,32 @@
         color: #ff5722;
     }
 
+    /* === BREADCRUMB BARU === */
+    .breadcrumb {
+        font-size: 14px;
+        margin: 20px 40px 0 40px;
+    }
+
+    .breadcrumb a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+    }
+
+    .breadcrumb a:hover {
+        text-decoration: underline;
+    }
+
+    .breadcrumb span {
+        margin: 0 6px;
+        color: #666;
+    }
+
+    .breadcrumb .current {
+        color: #333;
+        font-weight: bold;
+    }
+
     h2 {
         text-align: center;
         margin-bottom: 30px;
@@ -176,6 +202,13 @@
         <a href="kontak.html">Kontak</a>
     </nav>
 </header>
+
+<!-- ==== BREADCRUMB DITAMBAHKAN DI SINI ==== -->
+<nav class="breadcrumb">
+    <a href="index.html">Beranda</a>
+    <span>›</span>
+    <span class="current">Daftar Akun</span>
+</nav>
 
 <main class="page-slide">
 
