@@ -17,6 +17,28 @@
         padding: 20px;
     }
 
+    /* ========== BREADCRUMB ========== */
+    .breadcrumb {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    .breadcrumb a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+    }
+    .breadcrumb a:hover {
+        text-decoration: underline;
+    }
+    .breadcrumb span {
+        margin: 0 6px;
+        color: #666;
+    }
+    .breadcrumb .current {
+        color: #333;
+        font-weight: bold;
+    }
+
     .container {
         max-width: 1200px;
         margin: auto;
@@ -28,7 +50,6 @@
         gap: 40px;
     }
 
-    /* SLIDESHOW */
     .slideshow {
         width: 500px;
         height: 500px;
@@ -121,7 +142,6 @@
         text-decoration: none;
     }
 
-    /* SPESIFIKASI BOX */
     .spec-box {
         margin-top: 20px;
         background: #f7faff;
@@ -146,9 +166,16 @@
 
 <body>
 
-<div class="container">
+<!-- BREADCRUMB -->
+<nav class="breadcrumb">
+    <a href="index.html">Beranda</a>
+    <span>›</span>
+    <a href="daftar-akun.html">Daftar Akun</a>
+    <span>›</span>
+    <span class="current">STOCK AKUN 1</span>
+</nav>
 
-    <!-- SLIDESHOW FOTO -->
+<div class="container">
     <div class="slideshow">
         <img src="Gambar/stock_1.jpg" class="active">
         <img src="Gambar/stock_1b.jpg">
@@ -167,7 +194,6 @@
 
         <div class="stok" id="statusStok">Stok: Tersedia</div>
 
-        <!-- SPESIFIKASI -->
         <div class="spec-box">
             <h3>Spesifikasi Akun:</h3>
             <ul>
@@ -184,11 +210,9 @@
         <br><br>
         <a href="daftar-akun.html" class="back">← Kembali ke Daftar Akun</a>
     </div>
-
 </div>
 
 <script>
-/* SLIDESHOW */
 let slideIndex = 0;
 const slides = document.querySelectorAll(".slideshow img");
 
@@ -198,7 +222,6 @@ setInterval(() => {
     slides[slideIndex].classList.add("active");
 }, 3000);
 
-/* FAVORIT LOCALSTORAGE */
 document.getElementById("favBtn").addEventListener("click", function() {
     localStorage.setItem("fav_akun_1", "true");
     alert("Akun ini ditambahkan ke favorit!");
