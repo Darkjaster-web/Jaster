@@ -17,6 +17,28 @@
         padding: 20px;
     }
 
+    /* ===== BREADCRUMB ===== */
+    .breadcrumb {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    .breadcrumb a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+    }
+    .breadcrumb a:hover {
+        text-decoration: underline;
+    }
+    .breadcrumb span {
+        margin: 0 6px;
+        color: #666;
+    }
+    .breadcrumb .current {
+        color: #333;
+        font-weight: bold;
+    }
+
     .container {
         max-width: 1100px;
         margin: auto;
@@ -100,8 +122,16 @@
 
 <body>
 
-<div class="container">
+<!-- BREADCRUMB -->
+<nav class="breadcrumb">
+    <a href="index.html">Beranda</a>
+    <span>›</span>
+    <a href="daftar-akun.html">Daftar Akun</a>
+    <span>›</span>
+    <span class="current">STOCK AKUN 2</span>
+</nav>
 
+<div class="container">
     <div class="slideshow">
         <img src="Gambar/akunff.jpg" class="active">
         <img src="Gambar/akunff2.jpg">
@@ -109,7 +139,7 @@
     </div>
 
     <div class="right">
-        <h2>STOCK AKUN 1</h2>
+        <h2>STOCK AKUN 2</h2>
 
         <div class="rating">★★★★☆ (4.7)</div>
         <div class="sold">Terjual: 143 kali</div>
@@ -124,7 +154,6 @@
         <br><br>
         <a href="daftar-akun.html" class="back">← Kembali ke Daftar Akun</a>
     </div>
-
 </div>
 
 <script>
