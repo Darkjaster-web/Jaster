@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JASTOKER AKUN - Beranda</title>
+<title>JASTOCKER AKUN - Beranda</title>
 
 <style>
     body {
@@ -71,7 +71,7 @@
         display: block;
     }
 
-    /* EMPAT BANNER DI BAWAH SLIDER */
+    /* EMPAT BANNER */
     .banner-row {
         display: flex;
         gap: 20px;
@@ -89,11 +89,9 @@
         overflow: hidden;
     }
 
-    .banner-box img {
-        width: 100%; height: 100%; object-fit: cover;
-    }
+    .banner-box img { width: 100%; height: 100%; object-fit: cover; }
 
-    /* ICON KATEGORI BESAR */
+    /* ICON KATEGORI */
     .icon-wrap {
         display: flex;
         justify-content: center;
@@ -101,23 +99,36 @@
         margin-top: 40px;
     }
 
-    .icon-box {
-        text-align: center;
-        color: white;
-        font-weight: bold;
-    }
-
-    .icon-box img {
-        width: 70px;
-        margin-bottom: 10px;
-    }
+    .icon-box { text-align: center; color: white; font-weight: bold; }
+    .icon-box img { width: 70px; margin-bottom: 10px; }
 
     /* FOOTER */
     footer {
         background: #f5f5f5;
         padding: 40px;
-        text-align: center;
         margin-top: 60px;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+    }
+
+    footer h3 { margin-bottom: 10px; }
+    footer a { text-decoration: none; color: #333; }
+
+    .social span {
+        font-size: 28px;
+        margin-right: 10px;
+    }
+
+    .bottom {
+        margin-top: 30px;
+        text-align: center;
+        color: #555;
+        font-size: 14px;
     }
 </style>
 </head>
@@ -126,7 +137,7 @@
 <header>
     <div class="logo-container">
         <img src="Gambar/Logo.jpg" alt="Logo">
-        <div class="site-title">JASTOKER AKUN</div>
+        <div class="site-title">JASTOCKER AKUN</div>
     </div>
 
     <nav>
@@ -136,7 +147,6 @@
     </nav>
 </header>
 
-<!-- KATEGORI BAR -->
 <div class="kategori-bar">
     Kategori
     <span>Top Up</span>
@@ -146,7 +156,6 @@
     <span>Streaming</span>
 </div>
 
-<!-- HERO SLIDER AUTO PLAY -->
 <div class="slider-container">
     <div class="slider" id="slider">
         <div class="slide"><img src="Gambar/slide1.png"></div>
@@ -167,7 +176,6 @@ function runSlider() {
 setInterval(runSlider, 3500);
 </script>
 
-<!-- EMPAT BANNER SEPERTI ITEMKU -->
 <div class="banner-row">
     <div class="banner-box"><img src="Gambar/banner1.png"></div>
     <div class="banner-box"><img src="Gambar/banner2.png"></div>
@@ -175,7 +183,6 @@ setInterval(runSlider, 3500);
     <div class="banner-box"><img src="Gambar/banner4.png"></div>
 </div>
 
-<!-- ICON KATEGORI -->
 <div class="icon-wrap">
     <div class="icon-box"><img src="Gambar/ico1.png"><div>Top Up</div></div>
     <div class="icon-box"><img src="Gambar/ico2.png"><div>Akun Game</div></div>
@@ -183,8 +190,6 @@ setInterval(runSlider, 3500);
     <div class="icon-box"><img src="Gambar/ico4.png"><div>Streaming</div></div>
 </div>
 
-<!-- FOOTER -->
-<!-- ========= FOOTER BARU ========= -->
 <footer>
     <div class="footer-content">
 
@@ -194,9 +199,9 @@ setInterval(runSlider, 3500);
         </div>
 
         <div>
-            <h3>JASTOKER</h3>
-            <p><a href="#">Tentang JASTOKER</a></p>
-            <p><a href="#">JASTOKER Blog</a></p>
+            <h3>JASTOCKER</h3>
+            <p><a href="#">Tentang JASTOCKER</a></p>
+            <p><a href="#">JASTOCKER Blog</a></p>
             <p><a href="#">Identitas Brand</a></p>
             <p><a href="#">Hubungi Kami</a></p>
             <p><a href="#">Aturan Penggunaan</a></p>
@@ -221,7 +226,7 @@ setInterval(runSlider, 3500);
 
         <div>
             <h3>Metode Pembayaran</h3>
-            <img src="Gambar/payment.png" alt="Metode Pembayaran" style="width:250px; margin-top:10px;">
+            <img src="Gambar/payment.png" style="width:250px; margin-top:10px;">
         </div>
 
         <div>
@@ -235,92 +240,13 @@ setInterval(runSlider, 3500);
             </div>
 
             <h3>Download App</h3>
-            <img src="Gambar/googleplay.png" alt="Google Play" style="width:160px; margin-top:10px;">
+            <img src="Gambar/googleplay.png" style="width:160px; margin-top:10px;">
         </div>
 
         <div style="flex:1; min-width:300px;">
-            <img src="Gambar/footer-illustration.png" alt="Ilustrasi Footer" style="width:100%; max-width:400px;">
+            <img src="Gambar/footer-illustration.png" style="width:100%; max-width:400px;">
         </div>
 
     </div>
 
-    <div class="bottom">
-        © 2025 JASTOKER AKUN — Semua Hak Dilindungi
-    </div>
-</footer>
-<!-- ========= END FOOTER ========= -->
-
-<!-- ========= FOOTER BARU ========= -->
-<footer>
-    <div class="footer-content">
-
-        <!-- KOLOM 1 -->
-        <div>
-            <h3>Bantuan</h3>
-            <p><a href="#">Pusat Bantuan</a></p>
-        </div>
-
-        <!-- KOLOM 2 -->
-        <div>
-            <h3>JASTOKER</h3>
-            <p><a href="#">Tentang JASTOKER</a></p>
-            <p><a href="#">JASTOKER Blog</a></p>
-            <p><a href="#">Identitas Brand</a></p>
-            <p><a href="#">Hubungi Kami</a></p>
-            <p><a href="#">Aturan Penggunaan</a></p>
-            <p><a href="#">Kebijakan Pengembalian Dana</a></p>
-            <p><a href="#">Kebijakan Privasi</a></p>
-            <p><a href="#">Karir</a></p>
-        </div>
-
-        <!-- KOLOM 3 -->
-        <div>
-            <h3>Pembeli</h3>
-            <p><a href="#">Cara Belanja</a></p>
-            <p><a href="#">Cara Trading</a></p>
-            <p><a href="#">Cara Pembayaran</a></p>
-
-            <h3 style="margin-top:20px;">Penjual</h3>
-            <p><a href="#">Cara Menjadi Penjual</a></p>
-            <p><a href="#">Metode Pengiriman Produk</a></p>
-            <p><a href="#">Biaya Berjualan</a></p>
-            <p><a href="#">Metode Pencairan Saldo</a></p>
-            <p><a href="#">Testimoni Penjual</a></p>
-        </div>
-
-        <!-- KOLOM 4: METODE PEMBAYARAN -->
-        <div>
-            <h3>Metode Pembayaran</h3>
-            <img src="Gambar/payment.png" alt="Metode Pembayaran" style="width:250px; margin-top:10px;">
-        </div>
-
-        <!-- KOLOM 5: SOSIAL MEDIA & PLAYSTORE -->
-        <div>
-            <h3>Ikuti Kami</h3>
-            <div class="social">
-                <span>📘</span>
-                <span>📸</span>
-                <span>▶️</span>
-                <span>🎵</span>
-                <span>🐦</span>
-            </div>
-
-            <h3>Download App</h3>
-            <img src="Gambar/googleplay.png" alt="Google Play" style="width:160px; margin-top:10px;">
-        </div>
-
-        <!-- ILUSTRASI -->
-        <div style="flex:1; min-width:300px;">
-            <img src="Gambar/footer-illustration.png" alt="Ilustrasi Footer" style="width:100%; max-width:400px;">
-        </div>
-
-    </div>
-
-    <div class="bottom">
-        © 2025 JASTOKER AKUN — Semua Hak Dilindungi
-    </div>
-</footer>
-<!-- ========= END FOOTER ========= -->
-
-</body>
-</html>
+    <div class="bottom">© 202
