@@ -139,27 +139,58 @@
     .icon-box { text-align: center; color: white; font-weight: bold; }
     .icon-box img { width: 70px; margin-bottom: 10px; }
 
-    /* FOOTER DITENGAHKAN */
+    /* ========== FOOTER BARU (STYLE ITEMKU) ========== */
     footer {
-        background: #f5f5f5;
-        padding: 40px;
+        background: #ffffff;
+        padding: 50px 60px;
         margin-top: 60px;
-        text-align: center;
+        border-top: 1px solid #ddd;
     }
 
     .footer-content {
+        max-width: 1200px;
+        margin: auto;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 50px;
     }
 
-    footer h3 { margin-bottom: 10px; }
-    footer a { text-decoration: none; color: #333; }
+    .footer-col {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-col h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .footer-col a {
+        text-decoration: none;
+        color: #555;
+        margin-bottom: 8px;
+        font-size: 15px;
+    }
+
+    .footer-col a:hover {
+        color: #0f3fa8;
+    }
+
+    .pay-img {
+        width: 240px;
+        margin-top: 10px;
+    }
 
     .bottom {
-        margin-top: 30px;
-        color: #555;
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #e5e5e5;
+        color: #666;
         font-size: 14px;
     }
 </style>
@@ -180,7 +211,6 @@
 </header>
 
 <div class="kategori-bar">
-
     <div class="kategori-container" onclick="toggleKategori()">
         Kategori ▾
         <div class="kategori-dropdown" id="kategoriMenu">
@@ -188,7 +218,6 @@
             <a href="#">Akun</a>
         </div>
     </div>
-
 </div>
 
 <div class="slider-container">
@@ -212,7 +241,6 @@ setInterval(runSlider, 3500);
 </script>
 
 <script>
-/* SCRIPT DROPDOWN KATEGORI */
 function toggleKategori() {
     const menu = document.getElementById("kategoriMenu");
     menu.style.display = menu.style.display === "block" ? "none" : "block";
@@ -242,29 +270,29 @@ window.onclick = function(event) {
 <footer>
     <div class="footer-content">
 
-        <div>
+        <div class="footer-col">
             <h3>Bantuan</h3>
-            <p><a href="#">Pusat Bantuan</a></p>
+            <a href="#">Pusat Bantuan</a>
         </div>
 
-        <div>
+        <div class="footer-col">
             <h3>JASTOCKER</h3>
-            <p><a href="#">Tentang JASTOCKER</a></p>
-            <p><a href="#">Hubungi Kami</a></p>
+            <a href="#">Tentang JASTOCKER</a>
+            <a href="#">Hubungi Kami</a>
         </div>
 
-        <div>
+        <div class="footer-col">
             <h3>Pembeli</h3>
-            <p><a href="#">Cara Belanja</a></p>
-            <p><a href="#">Cara Pembayaran</a></p>
+            <a href="#">Cara Belanja</a>
+            <a href="#">Cara Pembayaran</a>
 
-            <h3 style="margin-top:20px;">Penjual</h3>
-            <p><a href="#">Testimoni Penjual</a></p>
+            <h3 style="margin-top: 18px;">Penjual</h3>
+            <a href="#">Testimoni Penjual</a>
         </div>
 
-        <div>
+        <div class="footer-col">
             <h3>Metode Pembayaran</h3>
-            <img src="Gambar/metode.png" style="width:250px; margin-top:10px;">
+            <img src="Gambar/metode.png" class="pay-img">
         </div>
 
     </div>
