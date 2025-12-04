@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JASTOKER AKUN — Kategori</title>
+  <meta name="description" content="Jelajahi kategori akun: game, bundle, harga murah, stok tersedia. Filter, cari, dan sortir cepat." />
+  <meta name="keywords" content="akun game, jual akun, kategori akun, JASTOKER" />
+  <meta name="author" content="JASTOKER AKUN" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    :root{
+      --bg:#eef4ff; --card:#fff; --muted:#6b7280; --accent:#2563eb; --danger:#ef4444;
+      --radius:12px; --shadow:0 6px 18px rgba(20,20,40,0.08);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);color:#0f172a}
+    a{color:inherit;text-decoration:none}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;background:linear-gradient(90deg,#fff, #f8fbff);box-shadow:var(--shadow)}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    .title{font-weight:700;font-size:16px}
+    nav{display:flex;gap:12px;align-items:center}
+    .btn{background:var(--accent);color:#fff;padding:8px 12px;border-radius:10px;border:0;cursor:pointer}
+    .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(37,99,235,0.12)}
+
+    /* Container */
+    .container{max-width:1100px;margin:28px auto;padding:0 18px}
+    .topbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
+    .search{flex:1;display:flex;gap:8px}
+    .search input{flex:1;padding:12px 14px;border-radius:10px;border:1px solid #dbeafe;background:#fff}
+    .controls{display:flex;gap:8px;align-items:center}
+
+    /* Categories */
+    .filters{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{background:#fff;padding:8px 10px;border-radius:999px;border:1px solid rgba(15,23,42,0.04);cursor:pointer}
+    .chip.active{background:linear-gradient(90deg,#e6f0ff,#f8fbff);border-color:var(--accent);color:var(--accent)}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+    .card{background:var(--card);padding:12px;border-radius:var(--radius);box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
+    .thumb{height:140px;border-radius:10px;background:linear-gradient(180deg,#f3f9ff,#fff);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--muted)}
+    .meta{display:flex;justify-content:space-between;align-items:center}
+    .meta .left{display:flex;gap:8px;flex-direction:column}
+    .meta .right{display:flex;gap:8px;align-items:center}
+    .price{font-weight:700;color:#0b1220}
+    .sold{font-size:13px;color:var(--muted)}
+    .fav{background:transparent;border:0;cursor:pointer;font-size:18px}
+    .stock{padding:6px 8px;border-radius:8px;font-weight:600;font-size:12px}
+    .stock.available{background:#ecfdf5;color:#065f46}
+    .stock.soldout{background:#fff1f2;color:#9f1239;border:1px solid rgba(239,68,68,0.08)}
+
+    /* Dropdown */
+    .dropdown{position:relative}
+    .dropdown-menu{position:absolute;right:0;top:46px;background:#fff;border-radius:10px;box-shadow:var(--shadow);padding:8px;border:1px solid rgba(2,6,23,0.06);min-width:200px;display:none}
+    .dropdown.open .dropdown-menu{display:block}
+    .dropdown-menu button{display:block;width:100%;text-align:left;padding:8px;border:0;background:transparent;border-radius:6px;cursor:pointer}
+    .dropdown-menu button:hover{background:#f1f5f9}
+
+    /* Footer */
+    footer{margin-top:28px;padding:18px;background:transparent;text-align:center;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:640px){
+      header{padding:12px}
+      .thumb{height:120px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">J</div>
+      <div>
+        <div class="title">JASTOKER AKUN</div>
+        <div style="font-size:12px;color:var(--muted)">Kategori &amp; Penelusuran</div>
+      </div>
+    </div>
+    <nav>
+      <a class="btn ghost" href="/daftar-akun.html">Daftar Akun</a>
+      <a class="btn ghost" href="/kontak.html">Kontak</a>
+      <button class="btn" onclick="location.href='#grid'">Telusuri</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="topbar">
+      <div class="search">
+        <input id="q" placeholder="Cari kategori, nama akun, fitur..." aria-label="Cari" />
+        <button class="btn" id="searchBtn">Cari</button>
+      </div>
+
+      <div class="controls">
+        <div class="dropdown" id="sortDrop">
+          <button class="chip" id="sortBtn" aria-haspopup="true" aria-expanded="false">Urutkan: Terbaru ▾</button>
+          <div class="dropdown-menu" role="menu" aria-label="Opsi sortir">
+            <button data-sort="new">Terbaru</button>
+            <button data-sort="price_asc">Harga: Rendah → Tinggi</button>
+            <button data-sort="price_desc">Harga: Tinggi → Rendah</button>
+            <button data-sort="sold">Terlaris</button>
+          </div>
+        </div>
+        <div class="filters" id="filters">
+          <button class="chip active" data-filter="all">Semua</button>
+          <button class="chip" data-filter="ff">Free Fire</button>
+          <button class="chip" data-filter="ml">Mobile Legends</button>
+          <button class="chip" data-filter="pubg">PUBG</button>
+          <button class="chip" data-filter="bundle">Bundle</button>
+          <button class="chip" data-filter="murah">Harga Murah</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="grid">
+      <div class="grid" id="categoryGrid" aria-live="polite">
+        <!-- Cards generated by JS -->
+      </div>
+    </section>
+
+    <footer>
+      © 2025 JASTOKER AKUN — Semua hak dilindungi. <a href="/privacy.html">Kebijakan Privasi</a>
+    </footer>
+  </main>
+
+  <script>
+    // contoh data kategori/produk — ganti atau hubungkan ke backend
+    const DATA = [
+      {id:1,title:'Akun FF Old - Legendary',category:'ff',price:120000,sold:26,stock:'available',img:'FF OLD'},
+      {id:2,title:'Akun ML Epic Bundle',category:'ml',price:85000,sold:10,stock:'available',img:'ML EPIC'},
+      {id:3,title:'Akun PUBG Rank ACE',category:'pubg',price:150000,sold:4,stock:'soldout',img:'PUBG ACE'},
+      {id:4,title:'Bundle Langka (senjata + skin)',category:'bundle',price:200000,sold:40,stock:'available',img:'BUNDLE'},
+      {id:5,title:'Akun Murah - Starter',category:'murah',price:25000,sold:120,stock:'available',img:'STARTER'}
+    ];
+
+    const grid = document.getElementById('categoryGrid');
+    const qInput = document.getElementById('q');
+    const searchBtn = document.getElementById('searchBtn');
+    const filters = document.getElementById('filters');
+    const sortDrop = document.getElementById('sortDrop');
+    const sortBtn = document.getElementById('sortBtn');
+
+    // render
+    function render(items){
+      grid.innerHTML = '';
+      if(!items.length){grid.innerHTML = '<div style="grid-column:1/-1;padding:28px;background:#fff;border-radius:12px;text-align:center;color:var(--muted)">Tidak ada hasil.</div>';return}
+      items.forEach(it=>{
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.innerHTML = `
+          <div class="thumb">${it.img}</div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+            <div>
+              <div style="font-weight:700">${it.title}</div>
+              <div style="font-size:13px;color:var(--muted)">Kategori: ${it.category.toUpperCase()}</div>
+            </div>
+            <div style="text-align:right">
+              <div class="price">Rp ${numberWithCommas(it.price)}</div>
+              <div class="sold">Terjual ${it.sold}</div>
+            </div>
+          </div>
+          <div class="meta">
+            <div class="left">
+              <div class="stock ${it.stock==='available'?'available':'soldout'}">${it.stock==='available'?'Tersedia':'Habis'}</div>
+            </div>
+            <div class="right">
+              <button class="fav" aria-label="Tambah ke favorit" data-id="${it.id}">♡</button>
+              <button class="btn" onclick="goDetail(${it.id})">Lihat</button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      })
+      attachFavHandlers();
+    }
+
+    function numberWithCommas(x){return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",")}
+
+    function goDetail(id){
+      // implementasi minimal — arahkan ke halaman detail jika ada
+      location.href = '/detail-akun.html?id='+id;
+    }
+
+    // filter & search
+    function applyFilters(){
+      const q = qInput.value.trim().toLowerCase();
+      const active = [...filters.querySelectorAll('.chip')].find(c=>c.classList.contains('active'))?.dataset.filter || 'all';
+      let items = DATA.slice();
+      if(active !== 'all') items = items.filter(i=>i.category===active);
+      if(q) items = items.filter(i=> (i.title + ' ' + i.category).toLowerCase().includes(q));
+      // sorting handled separately
+      const sort = sortBtn.dataset.sort || 'new';
+      if(sort==='price_asc') items.sort((a,b)=>a.price-b.price);
+      else if(sort==='price_desc') items.sort((a,b)=>b.price-a.price);
+      else if(sort==='sold') items.sort((a,b)=>b.sold-a.sold);
+      // default keep original order (simulated 'new')
+      render(items);
+    }
+
+    // init filters
+    filters.addEventListener('click', (e)=>{
+      const btn = e.target.closest('.chip'); if(!btn) return;
+      [...filters.querySelectorAll('.chip')].forEach(c=>c.classList.remove('active'));
+      btn.classList.add('active');
+      applyFilters();
+    });
+
+    // search
+    searchBtn.addEventListener('click', applyFilters);
+    qInput.addEventListener('keydown',(e)=>{if(e.key==='Enter')applyFilters()});
+
+    // dropdown
+    sortBtn.addEventListener('click', ()=>{sortDrop.classList.toggle('open');sortBtn.setAttribute('aria-expanded', sortDrop.classList.contains('open'))});
+    sortDrop.querySelectorAll('.dropdown-menu button').forEach(b=>{
+      b.addEventListener('click', ()=>{
+        const s=b.dataset.sort; sortBtn.dataset.sort=s; sortBtn.textContent = 'Urutkan: '+(b.textContent)+' ▾'; sortDrop.classList.remove('open'); applyFilters();
+      });
+    });
+
+    // favorites (localStorage)
+    function attachFavHandlers(){
+      document.querySelectorAll('.fav').forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          const id = btn.dataset.id; toggleFav(id); updateFavUI(btn,id);
+        });
+        updateFavUI(btn,btn.dataset.id);
+      })
+    }
+    function getFavs(){try{return JSON.parse(localStorage.getItem('jastoker_favs')||'[]')}catch(e){return []}}
+    function toggleFav(id){const favs=getFavs(); const idx=favs.indexOf(id); if(idx>-1) favs.splice(idx,1); else favs.push(id); localStorage.setItem('jastoker_favs',JSON.stringify(favs))}
+    function updateFavUI(btn,id){const favs=getFavs(); btn.textContent = favs.indexOf(id)>-1 ? '❤️' : '♡' }
+
+    // init
+    render(DATA);
+
+    // accessibility: close dropdown on outside click
+    document.addEventListener('click', (e)=>{ if(!sortDrop.contains(e.target)) { sortDrop.classList.remove('open'); sortBtn.setAttribute('aria-expanded','false') } });
+
+    // expose simple public API for server integration
+    window.JASTOKER = {
+      setData(newData){ if(Array.isArray(newData)){DATA.length=0; newData.forEach(i=>DATA.push(i)); applyFilters();} },
+      refresh(){applyFilters()}
+    }
+  </script>
+</body>
+</html>
