@@ -51,10 +51,8 @@
         position: relative;
     }
 
-    /* DROPDOWN KATEGORI */
     .kategori-container {
         position: relative;
-        display: inline-block;
         cursor: pointer;
     }
 
@@ -104,7 +102,7 @@
         display: block;
     }
 
-    /* EMPAT BANNER */
+    /* BANNER */
     .banner-row {
         display: flex;
         gap: 20px;
@@ -136,10 +134,19 @@
         margin-top: 40px;
     }
 
-    .icon-box { text-align: center; color: white; font-weight: bold; }
-    .icon-box img { width: 70px; margin-bottom: 10px; }
+    .icon-box {
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+    }
 
-    /* ========== FOOTER BARU (STYLE ITEMKU) ========== */
+    .icon-box img {
+        width: 70px;
+        margin-bottom: 10px;
+    }
+
+    /* FOOTER */
     footer {
         background: #ffffff;
         padding: 50px 60px;
@@ -260,8 +267,15 @@ window.onclick = function(event) {
 </div>
 
 <div class="icon-wrap">
-    <div class="icon-box"><img src="Gambar/diamond.gif"><div>Top Up</div></div>
-    <div class="icon-box"><img src="Gambar/xbox.gif"><div>Akun Game</div></div>
+    <a href="kategori.html" class="icon-box">
+        <img src="Gambar/diamond.gif">
+        <div>Top Up</div>
+    </a>
+
+    <a href="kategori.html" class="icon-box">
+        <img src="Gambar/xbox.gif">
+        <div>Akun Game</div>
+    </a>
 </div>
 
 <footer>
@@ -299,5 +313,3 @@ window.onclick = function(event) {
 
 </body>
 </html>
-
-
