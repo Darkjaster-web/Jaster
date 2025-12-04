@@ -6,193 +6,38 @@
 <title>JASTOCKER AKUN - Beranda</title>
 
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #0f3fa8;
-    }
-
-    /* HEADER */
-    header {
-        background: #0f3fa8;
-        padding: 15px 40px;
-        display: flex;
-        align-items: center;
-        color: white;
-        position: sticky;
-        top: 0;
-        z-index: 10;
-    }
-
-    .logo-container img {
-        width: 55px;
-        border-radius: 6px;
-        margin-right: 12px;
-    }
-
+    body { margin: 0; font-family: Arial, sans-serif; background: #0f3fa8; }
+    header { background: #0f3fa8; padding: 15px 40px; display: flex; align-items: center; color: white; position: sticky; top: 0; z-index: 10; }
+    .logo-container img { width: 55px; border-radius: 6px; margin-right: 12px; }
     nav { margin-left: auto; }
-    nav a {
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 16px;
-        color: white;
-        margin-left: 20px;
-    }
+    nav a { text-decoration: none; font-weight: bold; font-size: 16px; color: white; margin-left: 20px; }
 
-    /* NAV KATEGORI */
-    .kategori-bar {
-        background: #104ac2;
-        padding: 12px 40px;
-        color: white;
-        font-size: 15px;
-        display: flex;
-        gap: 25px;
-        font-weight: bold;
-        position: relative;
-    }
+    .kategori-bar { background: #104ac2; padding: 12px 40px; color: white; font-size: 15px; display: flex; gap: 25px; font-weight: bold; position: relative; }
+    .kategori-container { position: relative; display: inline-block; cursor: pointer; }
+    .kategori-dropdown { display: none; position: absolute; top: 35px; background: white; color: black; min-width: 230px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); border-radius: 10px; padding: 10px 0; z-index: 50; }
+    .kategori-dropdown a { display: block; padding: 12px 20px; font-weight: bold; text-decoration: none; color: black; }
+    .kategori-dropdown a:hover { background: #f0f0f0; }
 
-    /* DROPDOWN KATEGORI */
-    .kategori-container {
-        position: relative;
-        display: inline-block;
-        cursor: pointer;
-    }
+    .slider-container { width: 100%; max-width: 1200px; margin: 25px auto; overflow: hidden; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
+    .slider { display: flex; width: 400%; transition: transform 0.8s ease-in-out; }
+    .slide img { width: 100%; display: block; }
 
-    .kategori-dropdown {
-        display: none;
-        position: absolute;
-        top: 35px;
-        background: white;
-        color: black;
-        min-width: 230px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-        border-radius: 10px;
-        padding: 10px 0;
-        z-index: 50;
-    }
+    .banner-row { display: flex; gap: 20px; max-width: 1200px; margin: 25px auto; padding: 0 40px; }
+    .banner-box { flex: 1; background: white; border-radius: 15px; height: 220px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); overflow: hidden; }
+    .banner-box img { width: 100%; height: 100%; object-fit: cover; }
 
-    .kategori-dropdown a {
-        display: block;
-        padding: 12px 20px;
-        font-weight: bold;
-        text-decoration: none;
-        color: black;
-    }
-
-    .kategori-dropdown a:hover {
-        background: #f0f0f0;
-    }
-
-    /* SLIDER */
-    .slider-container {
-        width: 100%;
-        max-width: 1200px;
-        margin: 25px auto;
-        overflow: hidden;
-        border-radius: 20px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    }
-
-    .slider {
-        display: flex;
-        width: 400%;
-        transition: transform 0.8s ease-in-out;
-    }
-
-    .slide img {
-        width: 100%;
-        display: block;
-    }
-
-    /* EMPAT BANNER */
-    .banner-row {
-        display: flex;
-        gap: 20px;
-        max-width: 1200px;
-        margin: 25px auto;
-        padding: 0 40px;
-    }
-
-    .banner-box {
-        flex: 1;
-        background: white;
-        border-radius: 15px;
-        height: 220px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-        overflow: hidden;
-    }
-
-    .banner-box img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    /* ICON KATEGORI */
-    .icon-wrap {
-        display: flex;
-        justify-content: center;
-        gap: 50px;
-        margin-top: 40px;
-    }
-
-    .icon-box { text-align: center; color: white; font-weight: bold; }
+    .icon-wrap { display: flex; justify-content: center; gap: 50px; margin-top: 40px; }
+    .icon-box { text-align: center; color: white; font-weight: bold; cursor: pointer; }
     .icon-box img { width: 70px; margin-bottom: 10px; }
 
-    /* ========== FOOTER BARU (STYLE ITEMKU) ========== */
-    footer {
-        background: #ffffff;
-        padding: 50px 60px;
-        margin-top: 60px;
-        border-top: 1px solid #ddd;
-    }
-
-    .footer-content {
-        max-width: 1200px;
-        margin: auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 50px;
-    }
-
-    .footer-col {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .footer-col h3 {
-        font-size: 18px;
-        margin-bottom: 12px;
-        color: #333;
-        font-weight: bold;
-    }
-
-    .footer-col a {
-        text-decoration: none;
-        color: #555;
-        margin-bottom: 8px;
-        font-size: 15px;
-    }
-
-    .footer-col a:hover {
-        color: #0f3fa8;
-    }
-
-    .pay-img {
-        width: 240px;
-        margin-top: 10px;
-    }
-
-    .bottom {
-        text-align: center;
-        margin-top: 40px;
-        padding-top: 20px;
-        border-top: 1px solid #e5e5e5;
-        color: #666;
-        font-size: 14px;
-    }
+    footer { background: #ffffff; padding: 50px 60px; margin-top: 60px; border-top: 1px solid #ddd; }
+    .footer-content { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; gap: 50px; }
+    .footer-col { flex: 1; display: flex; flex-direction: column; }
+    .footer-col h3 { font-size: 18px; margin-bottom: 12px; color: #333; font-weight: bold; }
+    .footer-col a { text-decoration: none; color: #555; margin-bottom: 8px; font-size: 15px; }
+    .footer-col a:hover { color: #0f3fa8; }
+    .pay-img { width: 240px; margin-top: 10px; }
+    .bottom { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e5e5; color: #666; font-size: 14px; }
 </style>
 </head>
 <body>
@@ -202,7 +47,6 @@
         <img src="Gambar/Logo.jpg" alt="Logo">
         <div class="site-title">JASTOCKER AKUN</div>
     </div>
-
     <nav>
         <a href="index.html">Beranda</a>
         <a href="daftar-akun.html">Daftar Akun</a>
@@ -214,8 +58,8 @@
     <div class="kategori-container" onclick="toggleKategori()">
         Kategori ▾
         <div class="kategori-dropdown" id="kategoriMenu">
-            <a href="#">Top Up Game</a>
-            <a href="#">Akun</a>
+            <a href="kategori.html?cat=topup">Top Up Game</a>
+            <a href="kategori.html?cat=akun">Akun</a>
         </div>
     </div>
 </div>
@@ -245,7 +89,6 @@ function toggleKategori() {
     const menu = document.getElementById("kategoriMenu");
     menu.style.display = menu.style.display === "block" ? "none" : "block";
 }
-
 window.onclick = function(event) {
     if (!event.target.closest('.kategori-container')) {
         document.getElementById("kategoriMenu").style.display = "none";
@@ -262,44 +105,41 @@ window.onclick = function(event) {
 
 <div class="icon-wrap">
     <div class="icon-box"><img src="Gambar/diamond.gif"><div>Top Up</div></div>
-    <div class="icon-box"><img src="Gambar/xbox.gif"><div>Akun Game</div></div>
+
+    <div class="icon-box" onclick="window.location.href='kategori.html?cat=akungame'">
+        <img src="Gambar/xbox.gif">
+        <div>Akun Game</div>
+    </div>
+
     <div class="icon-box"><img src="Gambar/ico3.png"><div>Voucher</div></div>
     <div class="icon-box"><img src="Gambar/ico4.png"><div>Streaming</div></div>
 </div>
 
 <footer>
     <div class="footer-content">
-
         <div class="footer-col">
             <h3>Bantuan</h3>
             <a href="#">Pusat Bantuan</a>
         </div>
-
         <div class="footer-col">
             <h3>JASTOCKER</h3>
             <a href="#">Tentang JASTOCKER</a>
             <a href="#">Hubungi Kami</a>
         </div>
-
         <div class="footer-col">
             <h3>Pembeli</h3>
             <a href="#">Cara Belanja</a>
             <a href="#">Cara Pembayaran</a>
-
             <h3 style="margin-top: 18px;">Penjual</h3>
             <a href="#">Testimoni Penjual</a>
         </div>
-
         <div class="footer-col">
             <h3>Metode Pembayaran</h3>
             <img src="Gambar/metode.png" class="pay-img">
         </div>
-
     </div>
-
-    <div class="bottom">&copy; 2025 JASTOCKER AKUN | Semua Hak Dilindungi</div>
+    <div class="bottom">© 2025 JASTOCKER AKUN | Semua Hak Dilindungi</div>
 </footer>
 
 </body>
 </html>
-
