@@ -3,82 +3,135 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kategori</title>
-
+<title>Kategori - JASTOKER AKUN</title>
 <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #eef4ff; }
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #0d0d0d;
+        color: #e5e5e5;
+    }
 
-    /* === HEADER SAMA SEPERTI INDEX === */
-    header { background: #0f3fa8; padding: 15px 40px; display: flex; align-items: center; color: white; position: sticky; top: 0; z-index: 10; }
-    .logo-container img { width: 55px; border-radius: 6px; margin-right: 12px; }
-    nav { margin-left: auto; }
-    nav a { text-decoration: none; font-weight: bold; font-size: 16px; color: white; margin-left: 20px; }
+    /* HEADER */
+    header {
+        background: #111;
+        padding: 15px 20px;
+        color: #fff;
+        font-size: 22px;
+        font-weight: bold;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    }
 
-    /* === KATEGORI BAR BARU === */
-    .kategori-bar { background: linear-gradient(90deg, #0f3fa8, #1a5eff, #0f3fa8); padding: 14px 40px; color: white; font-size: 16px; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.25); }
+    .container {
+        max-width: 1100px;
+        margin: 30px auto;
+        padding: 0 20px;
+    }
 
-    /* === GRID ITEM === */
-    .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
-    .title { font-size: 24px; font-weight: bold; margin-bottom: 20px; color: #0f3fa8; }
+    /* TITLE */
+    .kategori-title {
+        font-size: 28px;
+        margin-bottom: 15px;
+        font-weight: bold;
+        text-shadow: 0 0 10px #7f4dff;
+    }
 
-    .item-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
-    .item-box { background: white; border-radius: 12px; padding: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); cursor: pointer; transition: 0.2s; }
-    .item-box:hover { transform: translateY(-5px); box-shadow: 0 12px 28px rgba(0,0,0,0.22); }
-    .item-box img { width: 100%; border-radius: 10px; }
-    .item-name { margin-top: 10px; font-size: 16px; font-weight: bold; color: #333; }
+    /* GRID */
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    /* CARD */
+    .card {
+        background: #151515;
+        border-radius: 14px;
+        padding: 18px;
+        border: 1px solid #222;
+        box-shadow: 0 0 15px rgba(127,77,255,0.15);
+        transition: 0.25s;
+    }
+
+    .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 0 20px rgba(132,0,255,0.55);
+        border-color: #7f4dff;
+    }
+
+    .card h3 {
+        margin: 0 0 10px;
+        color: #b388ff;
+    }
+
+    .card p {
+        font-size: 14px;
+        color: #cfcfcf;
+    }
+
+    /* FOOTER */
+    footer {
+        margin-top: 40px;
+        text-align: center;
+        padding: 20px;
+        background: #101010;
+        color: #666;
+        border-top: 1px solid #1c1c1c;
+    }
 </style>
 </head>
 <body>
 
-<header>
-    <div class="logo-container">
-        <img src="Gambar/Logo.jpg" alt="Logo">
-        <div class="site-title">JASTOCKER AKUN</div>
-    </div>
-    <nav>
-        <a href="index.html">Beranda</a>
-        <a href="daftar-akun.html">Daftar Akun</a>
-        <a href="kontak.html">Kontak</a>
-    </nav>
-</header>
-
-<div class="kategori-bar">Halaman Kategori</div>
+<header>Kategori</header>
 
 <div class="container">
-    <div class="title" id="judulKategori">Kategori</div>
+    <div id="kategoriTitle" class="kategori-title"></div>
 
-    <div class="item-grid" id="listItem">
-        <!-- Item kategori akan muncul dinamis berdasarkan ?cat= -->
-    </div>
+    <div id="kategoriList" class="grid"></div>
 </div>
 
+<footer>
+    © 2025 JASTOKER AKUN | Semua Hak Dilindungi
+</footer>
+
 <script>
-// Tangkap kategori dari URL
+// DATA KATEGORI
+const dataKategori = {
+    topup: [
+        {nama: "Top Up FF", deskripsi: "Instant, legal & aman."},
+        {nama: "Top Up ML", deskripsi: "Diamond instan via ID."},
+        {nama: "Top Up PUBG", deskripsi: "Harga termurah."}
+    ],
+
+    akun: [
+        {nama: "Akun FF Old", deskripsi: "Full skin, level tinggi."},
+        {nama: "Akun ML Epic", deskripsi: "Hero banyak, skin premium."},
+        {nama: "Akun PUBG Rare", deskripsi: "Item langka & murah."}
+    ]
+};
+
+// MENGAMBIL PARAMETER
 const urlParams = new URLSearchParams(window.location.search);
-const kategori = urlParams.get('cat');
+const cat = urlParams.get("cat");
 
-const judul = document.getElementById("judulKategori");
-const grid = document.getElementById("listItem");
+// TITLE
+const kategoriTitle = document.getElementById("kategoriTitle");
+const kategoriList = document.getElementById("kategoriList");
 
-if (kategori === "topup") {
-    judul.innerText = "Top Up Game";
-    grid.innerHTML = `
-        <div class="item-box"><img src="Gambar/ML.jpg"><div class="item-name">Top Up ML</div></div>
-        <div class="item-box"><img src="Gambar/game-free-fire.jpg"><div class="item-name">Top Up FF</div></div>
-        <div class="item-box"><img src="Gambar/GT.jpg"><div class="item-name">Top Up GTA</div></div>
-    `;
-}
-else if (kategori === "akun") {
-    judul.innerText = "Akun Game";
-    grid.innerHTML = `
-        <div class="item-box" onclick="location.href='daftar-akun.html'">
-            <img src="Gambar/xbox.gif"><div class="item-name">Semua Akun</div>
-        </div>
-    `;
-}
-else {
-    judul.innerText = "Kategori Tidak Ditemukan";
-    grid.innerHTML = `<div>Tidak ada data.</div>`;
+if (!cat || !dataKategori[cat]) {
+    kategoriTitle.innerText = "Kategori Tidak Ditemukan";
+} else {
+    kategoriTitle.innerText = cat === "topup" ? "Top Up Game" : "Kategori Akun";
+
+    dataKategori[cat].forEach(item => {
+        const div = document.createElement("div");
+        div.className = "card";
+        div.innerHTML = `
+            <h3>${item.nama}</h3>
+            <p>${item.deskripsi}</p>
+        `;
+        kategoriList.appendChild(div);
+    });
 }
 </script>
 
