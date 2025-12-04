@@ -8,74 +8,152 @@
   <meta name="keywords" content="akun game, jual akun, kategori akun, JASTOKER" />
   <meta name="author" content="JASTOKER AKUN" />
   <link rel="icon" href="/favicon.ico" />
+
   <style>
     :root{
-      --bg:#eef4ff; --card:#fff; --muted:#6b7280; --accent:#2563eb; --danger:#ef4444;
-      --radius:12px; --shadow:0 6px 18px rgba(20,20,40,0.08);
+      --bg:#eef4ff;
+      --card:#ffffff;
+      --muted:#475569;
+      --accent:#1e40af;
+      --accent-light:#2563eb;
+      --danger:#ef4444;
+
+      --radius:12px;
+      --shadow:0 4px 15px rgba(0,0,0,0.08);
+
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
+
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;background:var(--bg);color:#0f172a}
     a{color:inherit;text-decoration:none}
 
     /* Header */
-    header{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;background:linear-gradient(90deg,#fff, #f8fbff);box-shadow:var(--shadow)}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
-    .title{font-weight:700;font-size:16px}
-    nav{display:flex;gap:12px;align-items:center}
-    .btn{background:var(--accent);color:#fff;padding:8px 12px;border-radius:10px;border:0;cursor:pointer}
-    .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(37,99,235,0.12)}
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:18px 20px;
+      background:linear-gradient(90deg,#1e40af,#2563eb);
+      color:#fff;
+      box-shadow:var(--shadow);
+    }
 
-    /* Container */
+    .brand .logo{
+      width:44px;height:44px;border-radius:8px;
+      background:linear-gradient(135deg,#2563eb,#1e40af);
+      display:flex;align-items:center;justify-content:center;
+      color:#fff;font-weight:700;
+    }
+
+    .title{font-weight:700;font-size:16px;color:white}
+    header nav a{color:white !important}
+
+    .btn{
+      background:var(--accent-light);
+      color:#fff;
+      padding:8px 12px;
+      border-radius:10px;
+      border:0;
+      cursor:pointer;
+      transition:0.2s;
+    }
+    .btn:hover{background:#1d4ed8}
+
+    .btn.ghost{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.4);
+      color:#fff;
+    }
+    .btn.ghost:hover{background:rgba(255,255,255,0.15)}
+
     .container{max-width:1100px;margin:28px auto;padding:0 18px}
-    .topbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
-    .search{flex:1;display:flex;gap:8px}
-    .search input{flex:1;padding:12px 14px;border-radius:10px;border:1px solid #dbeafe;background:#fff}
-    .controls{display:flex;gap:8px;align-items:center}
 
-    /* Categories */
-    .filters{display:flex;gap:8px;flex-wrap:wrap}
-    .chip{background:#fff;padding:8px 10px;border-radius:999px;border:1px solid rgba(15,23,42,0.04);cursor:pointer}
-    .chip.active{background:linear-gradient(90deg,#e6f0ff,#f8fbff);border-color:var(--accent);color:var(--accent)}
+    .search input{
+      border:1px solid #bfd6ff;
+      background:#fff;
+    }
+    .search input:focus{border-color:#2563eb;outline:none}
 
-    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
-    .card{background:var(--card);padding:12px;border-radius:var(--radius);box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
-    .thumb{height:140px;border-radius:10px;background:linear-gradient(180deg,#f3f9ff,#fff);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--muted)}
-    .meta{display:flex;justify-content:space-between;align-items:center}
-    .meta .left{display:flex;gap:8px;flex-direction:column}
-    .meta .right{display:flex;gap:8px;align-items:center}
-    .price{font-weight:700;color:#0b1220}
-    .sold{font-size:13px;color:var(--muted)}
-    .fav{background:transparent;border:0;cursor:pointer;font-size:18px}
-    .stock{padding:6px 8px;border-radius:8px;font-weight:600;font-size:12px}
-    .stock.available{background:#ecfdf5;color:#065f46}
-    .stock.soldout{background:#fff1f2;color:#9f1239;border:1px solid rgba(239,68,68,0.08)}
+    .chip{
+      background:#ffffff;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(30,64,175,0.20);
+      cursor:pointer;
+      color:#1e3a8a;
+      font-weight:600;
+      transition:0.2s;
+    }
+    .chip:hover{
+      background:#e0eaff;
+      border-color:#2563eb;
+      color:#2563eb;
+    }
 
-    /* Dropdown */
-    .dropdown{position:relative}
-    .dropdown-menu{position:absolute;right:0;top:46px;background:#fff;border-radius:10px;box-shadow:var(--shadow);padding:8px;border:1px solid rgba(2,6,23,0.06);min-width:200px;display:none}
-    .dropdown.open .dropdown-menu{display:block}
-    .dropdown-menu button{display:block;width:100%;text-align:left;padding:8px;border:0;background:transparent;border-radius:6px;cursor:pointer}
-    .dropdown-menu button:hover{background:#f1f5f9}
+    .chip.active{
+      background:linear-gradient(90deg,#dbeafe,#eff6ff);
+      color:#1e40af;
+      border-color:#2563eb;
+    }
 
-    /* Footer */
-    footer{margin-top:28px;padding:18px;background:transparent;text-align:center;color:var(--muted)}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+      gap:14px;
+    }
 
-    /* Responsive */
-    @media (max-width:640px){
-      header{padding:12px}
-      .thumb{height:120px}
+    .card{
+      background:var(--card);
+      padding:12px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      transition:0.2s;
+    }
+    .card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 8px 22px rgba(0,0,0,0.12);
+    }
+
+    .thumb{
+      height:140px;border-radius:10px;
+      background:linear-gradient(180deg,#eaf1ff,#ffffff);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:700;color:#475569;
+    }
+
+    .stock.available{
+      background:#d1fae5;color:#065f46;
+    }
+    .stock.soldout{
+      background:#ffe4e6;color:#be123c;border:1px solid rgba(190,18,60,0.15);
+    }
+
+    .dropdown-menu{
+      background:#ffffff;
+      border:1px solid rgba(0,0,0,0.08);
+    }
+    .dropdown-menu button:hover{
+      background:#e0eaff;
+      color:#1e40af;
+    }
+
+    footer{
+      margin-top:28px;padding:18px;
+      text-align:center;
+      color:#475569;
     }
   </style>
 </head>
+
 <body>
+
   <header>
     <div class="brand">
       <div class="logo">J</div>
       <div>
         <div class="title">JASTOKER AKUN</div>
-        <div style="font-size:12px;color:var(--muted)">Kategori &amp; Penelusuran</div>
+        <div style="font-size:12px;color:#e2e8f0">Kategori & Penelusuran</div>
       </div>
     </div>
     <nav>
@@ -86,23 +164,26 @@
   </header>
 
   <main class="container">
-    <section class="topbar">
-      <div class="search">
+    <section class="topbar" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:18px">
+      <div class="search" style="flex:1;display:flex;gap:8px">
         <input id="q" placeholder="Cari kategori, nama akun, fitur..." aria-label="Cari" />
         <button class="btn" id="searchBtn">Cari</button>
       </div>
 
-      <div class="controls">
-        <div class="dropdown" id="sortDrop">
-          <button class="chip" id="sortBtn" aria-haspopup="true" aria-expanded="false">Urutkan: Terbaru ▾</button>
-          <div class="dropdown-menu" role="menu" aria-label="Opsi sortir">
+      <div class="controls" style="display:flex;gap:8px;align-items:center">
+        <div class="dropdown" id="sortDrop" style="position:relative">
+          <button class="chip" id="sortBtn" aria-haspopup="true" aria-expanded="false">
+            Urutkan: Terbaru ▾
+          </button>
+          <div class="dropdown-menu" role="menu" aria-label="Opsi sortir" style="position:absolute;right:0;top:46px;padding:8px;border-radius:10px;box-shadow:var(--shadow);display:none;min-width:200px">
             <button data-sort="new">Terbaru</button>
             <button data-sort="price_asc">Harga: Rendah → Tinggi</button>
             <button data-sort="price_desc">Harga: Tinggi → Rendah</button>
             <button data-sort="sold">Terlaris</button>
           </div>
         </div>
-        <div class="filters" id="filters">
+
+        <div class="filters" id="filters" style="display:flex;gap:8px;flex-wrap:wrap">
           <button class="chip active" data-filter="all">Semua</button>
           <button class="chip" data-filter="ff">Free Fire</button>
           <button class="chip" data-filter="ml">Mobile Legends</button>
@@ -115,7 +196,6 @@
 
     <section id="grid">
       <div class="grid" id="categoryGrid" aria-live="polite">
-        <!-- Cards generated by JS -->
       </div>
     </section>
 
@@ -125,7 +205,6 @@
   </main>
 
   <script>
-    // contoh data kategori/produk — ganti atau hubungkan ke backend
     const DATA = [
       {id:1,title:'Akun FF Old - Legendary',category:'ff',price:120000,sold:26,stock:'available',img:'FF OLD'},
       {id:2,title:'Akun ML Epic Bundle',category:'ml',price:85000,sold:10,stock:'available',img:'ML EPIC'},
@@ -141,10 +220,12 @@
     const sortDrop = document.getElementById('sortDrop');
     const sortBtn = document.getElementById('sortBtn');
 
-    // render
     function render(items){
       grid.innerHTML = '';
-      if(!items.length){grid.innerHTML = '<div style="grid-column:1/-1;padding:28px;background:#fff;border-radius:12px;text-align:center;color:var(--muted)">Tidak ada hasil.</div>';return}
+      if(!items.length){
+        grid.innerHTML = '<div style="grid-column:1/-1;padding:28px;background:#fff;border-radius:12px;text-align:center;color:var(--muted)">Tidak ada hasil.</div>';
+        return;
+      }
       items.forEach(it=>{
         const card = document.createElement('article');
         card.className = 'card';
@@ -160,12 +241,12 @@
               <div class="sold">Terjual ${it.sold}</div>
             </div>
           </div>
-          <div class="meta">
-            <div class="left">
+          <div class="meta" style="display:flex;justify-content:space-between;align-items:center">
+            <div class="left" style="display:flex;flex-direction:column;gap:6px">
               <div class="stock ${it.stock==='available'?'available':'soldout'}">${it.stock==='available'?'Tersedia':'Habis'}</div>
             </div>
-            <div class="right">
-              <button class="fav" aria-label="Tambah ke favorit" data-id="${it.id}">♡</button>
+            <div class="right" style="display:flex;gap:8px;align-items:center">
+              <button class="fav" aria-label="Tambah ke favorit" data-id="${it.id}" style="background:transparent;border:0;cursor:pointer;font-size:18px">♡</button>
               <button class="btn" onclick="goDetail(${it.id})">Lihat</button>
             </div>
           </div>
@@ -175,73 +256,111 @@
       attachFavHandlers();
     }
 
-    function numberWithCommas(x){return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",")}
+    function numberWithCommas(x){
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");
+    }
 
     function goDetail(id){
-      // implementasi minimal — arahkan ke halaman detail jika ada
       location.href = '/detail-akun.html?id='+id;
     }
 
-    // filter & search
     function applyFilters(){
       const q = qInput.value.trim().toLowerCase();
-      const active = [...filters.querySelectorAll('.chip')].find(c=>c.classList.contains('active'))?.dataset.filter || 'all';
+      const active = [...filters.querySelectorAll('.chip')]
+        .find(c=>c.classList.contains('active'))?.dataset.filter || 'all';
+
       let items = DATA.slice();
+
       if(active !== 'all') items = items.filter(i=>i.category===active);
       if(q) items = items.filter(i=> (i.title + ' ' + i.category).toLowerCase().includes(q));
-      // sorting handled separately
+
       const sort = sortBtn.dataset.sort || 'new';
       if(sort==='price_asc') items.sort((a,b)=>a.price-b.price);
       else if(sort==='price_desc') items.sort((a,b)=>b.price-a.price);
       else if(sort==='sold') items.sort((a,b)=>b.sold-a.sold);
-      // default keep original order (simulated 'new')
+
       render(items);
     }
 
-    // init filters
     filters.addEventListener('click', (e)=>{
-      const btn = e.target.closest('.chip'); if(!btn) return;
+      const btn = e.target.closest('.chip'); 
+      if(!btn) return;
+
       [...filters.querySelectorAll('.chip')].forEach(c=>c.classList.remove('active'));
       btn.classList.add('active');
       applyFilters();
     });
 
-    // search
     searchBtn.addEventListener('click', applyFilters);
-    qInput.addEventListener('keydown',(e)=>{if(e.key==='Enter')applyFilters()});
+    qInput.addEventListener('keydown',(e)=>{ if(e.key==='Enter') applyFilters() });
 
-    // dropdown
-    sortBtn.addEventListener('click', ()=>{sortDrop.classList.toggle('open');sortBtn.setAttribute('aria-expanded', sortDrop.classList.contains('open'))});
+    sortBtn.addEventListener('click', ()=>{
+      sortDrop.classList.toggle('open');
+      sortBtn.setAttribute('aria-expanded', sortDrop.classList.contains('open'));
+      sortDrop.querySelector('.dropdown-menu').style.display = sortDrop.classList.contains('open') ? 'block' : 'none';
+    });
+
     sortDrop.querySelectorAll('.dropdown-menu button').forEach(b=>{
       b.addEventListener('click', ()=>{
-        const s=b.dataset.sort; sortBtn.dataset.sort=s; sortBtn.textContent = 'Urutkan: '+(b.textContent)+' ▾'; sortDrop.classList.remove('open'); applyFilters();
+        const s = b.dataset.sort;
+        sortBtn.dataset.sort = s;
+        sortBtn.textContent = 'Urutkan: '+b.textContent+' ▾';
+        sortDrop.classList.remove('open');
+        sortDrop.querySelector('.dropdown-menu').style.display = 'none';
+        applyFilters();
       });
     });
 
-    // favorites (localStorage)
     function attachFavHandlers(){
       document.querySelectorAll('.fav').forEach(btn=>{
         btn.addEventListener('click', ()=>{
-          const id = btn.dataset.id; toggleFav(id); updateFavUI(btn,id);
+          const id = btn.dataset.id;
+          toggleFav(id);
+          updateFavUI(btn,id);
         });
         updateFavUI(btn,btn.dataset.id);
       })
     }
-    function getFavs(){try{return JSON.parse(localStorage.getItem('jastoker_favs')||'[]')}catch(e){return []}}
-    function toggleFav(id){const favs=getFavs(); const idx=favs.indexOf(id); if(idx>-1) favs.splice(idx,1); else favs.push(id); localStorage.setItem('jastoker_favs',JSON.stringify(favs))}
-    function updateFavUI(btn,id){const favs=getFavs(); btn.textContent = favs.indexOf(id)>-1 ? '❤️' : '♡' }
 
-    // init
+    function getFavs(){
+      try{return JSON.parse(localStorage.getItem('jastoker_favs')||'[]')}
+      catch(e){return []}
+    }
+
+    function toggleFav(id){
+      const favs = getFavs();
+      const idx = favs.indexOf(id);
+      if(idx>-1) favs.splice(idx,1);
+      else favs.push(id);
+      localStorage.setItem('jastoker_favs', JSON.stringify(favs));
+    }
+
+    function updateFavUI(btn,id){
+      const favs = getFavs();
+      btn.textContent = favs.indexOf(id)>-1 ? '❤️' : '♡';
+    }
+
     render(DATA);
 
-    // accessibility: close dropdown on outside click
-    document.addEventListener('click', (e)=>{ if(!sortDrop.contains(e.target)) { sortDrop.classList.remove('open'); sortBtn.setAttribute('aria-expanded','false') } });
+    document.addEventListener('click', (e)=>{
+      if(!sortDrop.contains(e.target)){
+        sortDrop.classList.remove('open');
+        sortDrop.querySelector('.dropdown-menu').style.display = 'none';
+        sortBtn.setAttribute('aria-expanded','false');
+      }
+    });
 
-    // expose simple public API for server integration
     window.JASTOKER = {
-      setData(newData){ if(Array.isArray(newData)){DATA.length=0; newData.forEach(i=>DATA.push(i)); applyFilters();} },
+      setData(newData){
+        if(Array.isArray(newData)){
+          DATA.length=0;
+          newData.forEach(i=>DATA.push(i));
+          applyFilters();
+        }
+      },
       refresh(){applyFilters()}
     }
   </script>
+
 </body>
 </html>
