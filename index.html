@@ -12,7 +12,17 @@
     nav { margin-left: auto; }
     nav a { text-decoration: none; font-weight: bold; font-size: 16px; color: white; margin-left: 20px; }
 
-    .kategori-bar { background: #104ac2; padding: 12px 40px; color: white; font-size: 15px; display: flex; gap: 25px; font-weight: bold; position: relative; }
+    .kategori-bar {
+    background: linear-gradient(90deg, #104ac2, #0f7be0, #3aa8ff);
+    padding: 12px 40px;
+    color: white;
+    font-size: 15px;
+    display: flex;
+    gap: 25px;
+    font-weight: bold;
+    position: relative;
+    transition: background 0.3s ease;
+}
     .kategori-container { position: relative; display: inline-block; cursor: pointer; }
     .kategori-dropdown { display: none; position: absolute; top: 35px; background: white; color: black; min-width: 230px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); border-radius: 10px; padding: 10px 0; z-index: 50; }
     .kategori-dropdown a { display: block; padding: 12px 20px; font-weight: bold; text-decoration: none; color: black; }
@@ -106,7 +116,7 @@ window.onclick = function(event) {
 <div class="icon-wrap">
     <div class="icon-box"><img src="Gambar/diamond.gif"><div>Top Up</div></div>
 
-    <div class="icon-box" onclick="window.location.href='kategori.html?cat=akungame'">
+    <div class="icon-box" onclick="window.location.href='kategori.html?cat=akun'">
         <img src="Gambar/xbox.gif">
         <div>Akun Game</div>
     </div>
@@ -143,3 +153,4 @@ window.onclick = function(event) {
 
 </body>
 </html>
+
